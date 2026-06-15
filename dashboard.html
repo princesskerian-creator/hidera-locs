@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | Hidera Locs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="Hairstyles.html">HIDERA LOCS</a>
+            <a href="Hairstyles.html" class="btn btn-outline-warning btn-sm">
+                <i class="fas fa-arrow-left me-2"></i>Back to Home
+            </a>
+        </div>
+    </nav>
+    
+    <!-- Dashboard Content Header -->
+    <header class="py-5 bg-dark border-bottom border-secondary">
+        <div class="container">
+            <div class="d-flex align-items-center gap-4">
+                <div id="user-initial" class="avatar-circle border border-warning d-flex align-items-center justify-content-center bg-black text-warning fw-bold fs-3" style="width: 70px; height: 70px; border-radius: 50%;">
+                     G
+                </div>
+                <div>
+                    <h1 class="h3 fw-bold text-warning mb-1">Welcome back, <span id="user-display-name">Guest</span>!</h1>
+                    <p class="text-white-50 mb-0 small"><i class="fas fa-map-marker-alt me-2"></i><span id="user-location">Ado, Nigeria</span></p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-8">
+                    <div class="auth-card p-4 border border-warning rounded mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h3 class="h5 text-warning fw-bold mb-0"><i class="fas fa-calendar-alt me-2"></i>Upcoming Appointments</h3>
+                            <span class="badge bg-warning text-dark fw-bold">1 Active</span>
+                        </div>
+
+                        <!-- Appointment Item Card -->
+                        <div class="p-3 bg-black border border-secondary rounded-3 d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                            <div>
+                                <div class="badge bg-dark border border-warning text-warning mb-2">Micro Locs Retwist</div>
+                                <h5 class="text-white fw-bold mb-1">Hideralocs Salon & Spa</h5>
+                                <p class="text-white-50 small mb-0">
+                                    <i class="far fa-clock me-2"></i>June 12, 2026 at 10:00 AM
+                                </p>
+                            </div>
+                            <div class="d-flex gap-2">
+                                <a href="https://wa.me/2349076698916" target="_blank" class="btn btn-outline-success btn-sm">
+                                    <i class="fab fa-whatsapp me-1"></i> Reschedule
+                                </a>
+                                <button class="btn btn-outline-danger btn-sm" onclick="cancelAppointment()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order History Section -->
+                    <div class="auth-card p-4 border border-warning rounded">
+                        <h3 class="h5 text-warning fw-bold mb-4"><i class="fas fa-shopping-bag me-2"></i>Recent Orders</h3>
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover align-middle border border-secondary mb-0">
+                                <thead>
+                                    <tr class="text-warning small text-uppercase">
+                                        <th>Order ID</th>
+                                        <th>Item</th>
+                                        <th>Total</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font-monospace text-white-50">#HL-7842</td>
+                                        <td class="fw-bold">Essential Growth Oil</td>
+                                        <td>₦9,000</td>
+                                        <td><span class="badge bg-success">Dispatched</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <!-- Membership Card -->
+                    <div class="auth-card p-4 border border-warning text-center bg-dark rounded mb-4">
+                        <i class="fas fa-crown text-warning fa-3x mb-3"></i>
+                        <h4 class="h5 text-white fw-bold">Loc VIP Club</h4>
+                        <p class="text-white-50 small">You've earned 150 points this season.</p>
+                        <div class="progress bg-black border border-secondary mb-2" style="height: 10px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 75%;"></div>
+                        </div>
+                        <small class="text-warning">25 points until your next free detox treatment!</small>
+                    </div>
+
+                    <!-- Care Notes -->
+                    <div class="auth-card p-4 border border-warning rounded">
+                        <h4 class="h6 text-warning fw-bold mb-3"><i class="fas fa-comment-medical me-2"></i>Stylist Care Notes</h4>
+                        <div class="p-3 bg-black rounded border border-secondary small text-white-50">
+                            "Princess, remember to spray your rosewater mist every morning to keep your perimeter hydrated before your June retwist!" 
+                            <br><span class="text-warning d-block mt-2 font-monospace">— HideraLocs Salon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="auth.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentSession = JSON.parse(localStorage.getItem('hidera_current_session'));
+
+            if (!currentSession) {
+                alert("Please login to access your dashboard.");
+                window.location.href = "login.html";
+                return;
+            }
+
+            document.getElementById('user-display-name').innerText = currentSession.name;
+            document.getElementById('user-location').innerText = currentSession.location;
+            document.getElementById('user-initial').innerText = currentSession.name.charAt(0).toUpperCase();
+        });
+
+        function cancelAppointment() {
+            if(confirm("Are you sure you want to cancel your appointment?")) {
+                alert("Appointment cancellation request sent to the stylist.");
+            }
+        }
+    </script>
+</body>
+</html>

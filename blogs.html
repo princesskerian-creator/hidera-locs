@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | Hidera Locs Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Hairstyles.html">HIDERA<span class="text-warning">LOCS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Hairstyles.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-warning btn-sm" href="Login.html">Sign In</a></li>
+                    
+                    <!-- Profile Management Interface Dropdown -->
+                    <div class="dropdown d-inline-block ms-lg-3">
+                        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <div class="avatar-circle border border-warning d-flex align-items-center justify-content-center bg-dark text-warning fw-bold" style="width:35px; height:35px; border-radius:50%;">P</div>
+                            <span class="ms-2 text-white d-none d-md-inline-block small">Princess</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark border-warning shadow-lg" aria-labelledby="userDropdown">
+                            <li><h6 class="dropdown-header text-warning">My Account</h6></li>
+                            <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-calendar-check me-2"></i>Appointments</a></li>
+                            <li><a class="dropdown-item" href="order-success.html"><i class="fas fa-shopping-bag me-2"></i>Order History</a></li>
+                            <li><a class="dropdown-item" href="service.html#saved"><i class="fas fa-heart me-2"></i>Saved Styles</a></li>
+                            <li><hr class="dropdown-divider border-secondary"></li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="handleLogout()"><i class="fas fa-sign-out-alt me-2"></i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5 text-center bg-dark border-bottom border-warning">
+        <div class="container">
+            <h1 class="display-4 fw-bold text-warning">The Loc Journal</h1>
+            <p class="lead">Insights, care tips, and the latest in hairstyle artistry.</p>
+        </div>
+    </section>
+
+    <!-- Video Logs -->
+    <main class="container py-5">
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <article class="auth-card h-100 overflow-hidden">
+                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/l2kpmrbl-Go" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="p-4">
+                        <span class="badge bg-warning text-dark mb-2">Maintenance</span>
+                        <h2 class="h5 fw-bold">Top 5 Tips for Night-time Loc Care</h2>
+                        <p class="small text-muted">Learn how to protect your style while you sleep to prevent frizz and breakage.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <article class="auth-card h-100 overflow-hidden">
+                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/jccHAoJzwbs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="p-4">
+                        <span class="badge bg-warning text-dark mb-2">SISTERLOCKS NIGHT TIME ROUTINE</span>
+                        <h2 class="h5 fw-bold">My Loc Journey</h2>
+                        <p class="small text-muted">How I Care For My Locs</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <article class="auth-card h-100 overflow-hidden">
+                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/1oTbZxblRcc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="p-4">
+                        <span class="badge bg-warning text-dark mb-2">MICROLOCS NIGHT ROUTINE</span>
+                        <h2 class="h5 fw-bold">Moisturize & Stretch Microlocs</h2>
+                        <p class="small text-muted">Learn how to protect your style while sleeping.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <article class="auth-card h-100 overflow-hidden">
+                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/bSY8DXKrasM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="p-4">
+                        <span class="badge bg-warning text-dark mb-2">HAIR INSTALLATION</span>
+                        <h2 class="h5 fw-bold">Install Coloured Temporary Dreads on Long Hair</h2>
+                        <p class="small text-muted">Learn how to attach extensions securely without changing your organic length.</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col-md-6 col-lg-4">
+                <article class="auth-card h-100 overflow-hidden">
+                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/ERvYpwyd08E" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                    <div class="p-4">
+                        <span class="badge bg-warning text-dark mb-2">HAIR EXTENSION</span>
+                        <h2 class="h5 fw-bold">Temporary Dreadlocks Extension Tutorial on Short Hair</h2>
+                        <p class="small text-muted">Techniques on attaching extensions reliably to short base styles.</p>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- Text Blogs -->
+        <div class="mt-5 pt-4">
+            <h2 class="text-warning fw-bold mb-4">Featured Articles</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="auth-card p-4 border border-warning rounded">
+                        <h3 class="h5 text-white fw-bold">Top 5 Tips for Night-time Loc Care</h3>
+                        <p class="text-white-50 small">Discover deep structural methods to stop lint collection inside older loc cores...</p>
+                        <a href="Preview.html" class="btn btn-outline-warning btn-sm fw-bold">READ FULL TIPS</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations Grid Toggle -->
+        <section class="py-4 mt-5 border-top border-secondary">
+            <h4 class="text-warning mb-4">You Might Also Like</h4>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="auth-card p-3 border border-secondary rounded">
+                        <h6 class="text-white">5 Signs of Loc Rot</h6>
+                        <a href="blog-loc-rot.html" class="text-warning small text-decoration-none">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 border-top border-warning">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4 text-uppercase">Hidera<span class="text-warning">Locs</span></h3>
+            <p class="text-white-50 mb-4">Follow our journey and see the latest transformations.</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://www.instagram.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <hr class="border-light opacity-25 w-50 mx-auto my-4">
+            <p class="small text-white-50 mb-0">&copy; 2026 Hidera Locs Professional. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

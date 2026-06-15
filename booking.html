@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment | Hidera Locs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body class="bg-black text-white">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Hairstyles.html">HIDERA<span class="text-warning">LOCS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Hairstyles.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="booking.html">Book Now</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-warning btn-sm" href="Login.html">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-5">
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold text-warning">Reserve Your Session</h1>
+            <p class="lead">Select a service and a time that works for you.</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <form class="auth-card p-4 shadow-lg border border-secondary rounded">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-warning small fw-bold">Select Service</label>
+                            <select class="form-select bg-dark text-white border-secondary">
+                                <option selected>Starter Locs</option>
+                                <option>Loc Retwist</option>
+                                <option>Loc Repair</option>
+                                <option>Instant Locs</option>
+                                <option>Micro-Locs</option>
+                                <option>Extensions</option>
+                                <option>Consultation</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-warning small fw-bold">Preferred Stylist</label>
+                            <select class="form-select bg-dark text-white border-secondary">
+                                <option selected>Any Available</option>
+                                <option>Chidera (Senior Artist)</option>
+                                <option>Samuel/Dew(Master Loctician)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-warning small fw-bold">Appointment Date</label>
+                            <input type="date" class="form-control bg-dark text-white border-secondary">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label text-warning small fw-bold">Preferred Time</label>
+                            <select class="form-select bg-dark text-white border-secondary">
+                                <option>09:00 AM</option>
+                                <option>11:30 AM</option>
+                                <option>02:00 PM</option>
+                                <option>04:30 PM</option>
+                                <option>05:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-warning small fw-bold">Additional Notes</label>
+                        <textarea class="form-control bg-dark text-white border-secondary" rows="3" placeholder="Tell us about your hair length or specific needs..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-warning w-100 py-3 fw-bold">CONFIRM BOOKING</button>
+                </form>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="p-4 border border-warning rounded">
+                    <h3 class="h4 text-warning mb-4">Booking Policy</h3>
+                    <ul class="list-unstyled small">
+                        <li class="mb-3"><i class="fas fa-check-circle text-warning me-2"></i> Deposits are non-refundable for cancellations under 24 hours.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-warning me-2"></i> Please arrive 10 minutes before your scheduled time.</li>
+                        <li class="mb-3"><i class="fas fa-check-circle text-warning me-2"></i> Consultations are required for all new color services.</li>
+                    </ul>
+                    <hr class="border-secondary">
+                    <div class="d-flex align-items-center mt-4">
+                        <div class="flex-shrink-0">
+                            <img src="" class="rounded-circle border border-warning" alt="Support" style="width:50px; height:50px; object-fit:cover;">
+                        </div>
+                        <div class="ms-3">
+                            <p class="mb-0 fw-bold">Need Help?</p>
+                            <a href="https://wa.me/2349076698916" class="text-warning text-decoration-none small">Chat with an Expert</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

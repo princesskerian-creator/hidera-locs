@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import "tailwindcss";
+:root {
+    --gold: #d4af37;
+    --dark-gold: #b8860b;
+    --black: #111111;
+    --glass: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--black);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* Triangle Split Layout Logic */
+.hero-triangle-section {
+    position: relative;
+    background-color: #111111; /* Top-Left Base Layer: Black */
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* The Gold Triangle Dynamic Background Layer */
+.hero-triangle-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffc107; /* Bootstrap Warning Gold */
+    clip-path: polygon(100% 0, 100% 100%, 35% 100%);
+    z-index: 1;
+}
+
+/* Keep Content Above the Background Layers */
+.hero-triangle-section .container {
+    position: relative;
+    z-index: 3;
+}
+
+/* Perfect Center Placement for the Profile Circle Overlay */
+.hero-image-container {
+    display: inline-block;
+}
+
+.hero-image-container img {
+    width: 420px;
+    height: 420px; 
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #f59e0b;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    background-color: #111111;
+    transform: rotate(270deg);
+}
+
+.auth-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid var(--gold);
+    border-radius: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+     cursor: default;
+}
+
+.auth-card:hover {
+    transform: translateY(-10px);
+    border-color: #ffffff !important;
+}
+
+
+.form-control {
+    background-color: #121212;
+    border: 1px solid #333;
+    color: #fff !important;
+}
+
+.form-control:focus {
+    background-color: #161616;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+.nav-link.active {
+    color: var(--gold) !important;
+    border-bottom: 2px solid var(--gold);
+}
+
+.product-image-wrapper img {
+    transition: transform 0.5s ease;
+}
+
+.product-image-wrapper:hover img {
+    transform: scale(1.05);
+}
+
+footer {
+    margin-top: auto;
+    background-color: #0b0b0b !important;
+}
+
+/* About page */
+
+/* Journey Section Layout and Triangle Split */
+.journey-split-section {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(150deg, #000000 57%, #f59e0b 50%);
+}
+
+/* Text Enhancements */
+.journey-content .text-light-gray {
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.8;
+}
+
+/* The Perfect Circle Framing */
+.journey-circle-container {
+  position: relative;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #000000; /* Crisp black border to pop off the gold background */
+  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+}
+
+/* Image behavior inside the circle */
+.journey-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotate(270deg);
+}
+
+/* Subtle hover effect for luxury feel */
+.journey-circle-container:hover {
+  transform: scale(1.03);
+}
+
+/* Z-index safety helper */
+.z-index-2 {
+  z-index: 2;
+}
+
+
+/* Custom Product Details Tabs Style adjustments */
+#productTab .nav-link {
+    transition: all 0.3s ease;
+    border-bottom: 2px solid transparent !important;
+}
+
+#productTab .nav-link.active {
+    color: #d4af37 !important;
+    border-bottom: 2px solid #d4af37 !important;
+}
+
+#productTab .nav-link:hover {
+    color: #fff !important;
+}
+
+.table-dark {
+    --bs-table-bg: #000000;
+    --bs-table-striped-bg: #0b0b0b;
+}
+
+
+/* services page */
+/* Rotate the sideways showcase image to stand straight up */
+.rotate-straight {
+    transform: rotate(270deg);
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover; /* Keeps the proportions clean without stretching */
+}
+
+/* Container safety boundary wrapper to prevent clipping */
+.image-fixed-wrapper {
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+}
+    /* product1 page */
+ /* Product Layout Custom Enhancements */
+.product-main-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid #d4af37;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+}
+.thumbnail-img {
+    width: 100%;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.thumbnail-img:hover, .thumbnail-img.active {
+    border-color: #d4af37;
+    transform: scale(1.05);
+}
+.qty-input {
+    max-width: 80px;
+    background-color: #111;
+    border: 1px solid #333;
+    color: #fff;
+    text-center: center;
+}
+.qty-input:focus {
+    background-color: #111;
+    border-color: #d4af37;
+    color: #fff;
+    box-shadow: none;
+}
+
+/* style-gallery page */
+ /* Interactive Style Grid Customizations */
+.gallery-card {
+    background-color: #0b0b0b;
+    border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), border-color 0.3s ease;
+    cursor: pointer;
+}
+.gallery-card:hover {
+    transform: translateY(-8px);
+    border-color: #d4af37;
+}
+.gallery-img-wrapper {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+}
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+.gallery-card:hover .gallery-img {
+    transform: scale(1.08);
+}
+.gallery-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+/* Modal Glassmorphism Customization */
+.modal-content-custom {
+    background-color: #0b0b0b;
+    border: 1px solid #d4af37;
+    border-radius: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Hairstyles page */
+
+/* Responsive Breakpoints: Smooth adjustments for phones and tablets */
+@media (max-width: 991.98px) {
+.hero-triangle-section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+.hero-triangle-section::before {
+    clip-path: polygon(0 45%, 100% 25%, 100% 100%, 0 100%);
+}
+.hero-image-container img {
+    width: 300px;
+    height: 300px;
+    border-width: 6px !important;
+}
+}
+
+/* About page */
+/* Responsive adjust for mobile screens */
+@media (max-width: 991.98px) {
+  .journey-split-section {
+    background: linear-gradient(180deg, #000000 55%, #f59e0b 55%);
+    text-align: center;
+  }
+  .journey-circle-container {
+    width: 280px;
+    height: 280px;
+  }
+}

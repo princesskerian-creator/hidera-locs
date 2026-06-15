@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Hidera Locs</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Master Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- Main Product Container -->
+    <div class="container py-5 my-auto" style="min-height: 85vh; display: flex; align-items: center;">
+        <div class="card bg-dark border-secondary p-4 p-md-5 w-100 shadow-lg">
+            <div class="row align-items-center g-5">
+                
+                <!-- Left Column: Product Image -->
+                <div class="col-md-6 text-center">
+                    <img src="img/3.jpg" class="img-fluid rounded border border-warning shadow" alt="Crochet" style="max-height: 400px; object-fit: cover;">
+                </div>
+                
+                <!-- Right Column: Product Description & Actions -->
+                <div class="col-md-6">
+                    <span class="badge bg-warning text-dark fw-bold mb-2">Bestseller</span>
+                    <h1 class="text-warning fw-bold display-5">tools</h1>
+                    <p class="h2 my-3 text-white">5,000</p>
+                    <p class="text-white-50 lead">9 Pcs Dreadlocks Tool Set Latch Hook Different Sizes Small Crochet Hooks Needle Interlocking Tool for Locs Hair</p>
+                    
+                    <!-- Action Triggers -->
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="shop.html" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Shop
+                        </a>
+                        
+                        <!-- Updated Dynamic Add to Cart Trigger -->
+                        <button class="btn btn-warning fw-bold px-5 py-2 add-to-cart-btn" 
+                                data-id="growth-oil-01"
+                                data-name="Essential Growth Oil" 
+                                data-price="7500">
+                            <i class="fas fa-shopping-bag me-2"></i>ADD TO CART
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <section class="py-5 bg-dark border-top border-secondary">
+    <div class="container">
+        <ul class="nav nav-tabs justify-content-center border-bottom border-secondary mb-4" id="productTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active text-uppercase fw-bold px-4 py-3 text-warning border-0" 
+                        id="details-tab" data-bs-toggle="tab" data-bs-target="#details-panel" 
+                        type="button" role="tab" aria-controls="details-panel" aria-selected="true"
+                        style="background: transparent;">
+                    <i class="fas fa-info-circle me-2"></i>Product Details
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-uppercase fw-bold px-4 py-3 text-white-50 border-0" 
+                        id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs-panel" 
+                        type="button" role="tab" aria-controls="specs-panel" aria-selected="false"
+                        style="background: transparent;">
+                    <i class="fas fa-sliders-h me-2"></i>Specifications
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content row justify-content-center" id="productTabContent">
+            
+            <div class="tab-pane fade show active col-lg-9 text-white-50" id="details-panel" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
+                <div class="p-4 bg-black rounded border border-secondary shadow-sm">
+                    <h4 class="text-warning fw-bold mb-3"> Design dreadlocks: </h4>
+                    <p class="mb-4">
+                      the hair locking tools and hair weaving needle crochet are helpers for you to weave and design your own hairstyles, they can help you to weave hair and avoid hand fatigue. 
+                    </p>
+                    <h5 class="text-white fw-bold mb-2"> Suitable for:</h5>
+                    <ul class="list-unstyled mb-4 text-white-50">
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> the dreadlocks tools set can be applied to weave, tighten, fixed, repair your dreadlocks, if you like dreadlocks or want to try it, it is a nice tool set for you
+                        0.75mm Crochet Needle Hooks For Making Dirty Braids, Dreadlock Braiding Hair Soft Bamboo Handle One Double Triple Hook.
+                       </li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Durable material: </li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> the dreadlocks crochet and hair locking tool are made of stainless steel, the surface is smooth and polished, do not worry it will hurt your head skin, the crochet has bamboo handle, easy for you to hold in hand.</li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Design dreadlocks:</li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>the hair locking tools and hair weaving needle crochet are helpers for you to weave and design your own hairstyles, they can help you to weave hair and avoid hand fatigue.</li>
+                    </ul>
+                    <h5 class="text-white fw-bold mb-2">Suitable for:</h5>
+                    <p class="mb-0">
+                         the dreadlocks tools set can be applied to weave, tighten, fixed, repair your dreadlocks, if you like dreadlocks or want to try it, it is a nice tool set for you.
+                    </p>
+                </div>
+            </div>
+
+            <div class="tab-pane fade col-lg-9" id="specs-panel" role="tabpanel" aria-labelledby="specs-tab" tabindex="0">
+                <div class="p-4 bg-black rounded border border-secondary shadow-sm">
+                    <h4 class="text-warning fw-bold mb-3">Key Feactures</h4>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover border border-secondary align-middle mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="text-warning fw-bold ps-2" style="width: 35%;"></td>
+                                    <td class="text-white-50"><ul><li>Material: Natural bamboo</li><li>Super smooth feel than metal needlesPerfect for fixing dreadlocks.</li><li>There are three crochet hooks, 1pcs single needle, 1pcs double,1pcs Triple</li> <li>Custom designed for dreadlocks,dreadlock crochet hook.</li><li>croachet Soft touch handle,made buy bamboo, 0.75mm diameter needle</li></ul></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="p-4 bg-black rounded border border-secondary shadow-sm">
+                        <h4 class="text-warning fw-bold mb-3">Specification</h4>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover border border-secondary align-middle mb-0">
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">SKU: </td>
+                                        <td class="text-white-50">GE779ST4V6K6ENAFAMZ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Product Line:</td>
+                                        <td class="text-white-50">Netflix</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Weight (kg):</td>
+                                        <td class="text-white-50">0.1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Model:</td>
+                                        <td class="text-white-50">New</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Color: </td>
+                                        <td class="text-white-50">White</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Main Material:</td>
+                                        <td class="text-white-50">Plastic</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Country of Origin</td>
+                                        <td class="text-white-50">Nigeria</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Right Slide-Out Shopping Bag Drawer Layout (Bootstrap Offcanvas) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white border-start border-warning" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title text-warning fw-bold" id="cartSidebarLabel">
+                <i class="fas fa-shopping-bag me-2"></i>Your Shopping Bag
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <!-- Dynamic Selected Items Target Stack -->
+            <div id="cartItemsContainer" class="flex-grow-1 overflow-y-auto mb-3">
+                <!-- JavaScript renders items here dynamically -->
+                <div class="text-center text-muted py-5">Your bag is empty</div>
+            </div>
+            
+            <!-- Summary calculations panel -->
+            <div class="border-top border-secondary pt-3 mt-auto">
+                <div class="d-flex justify-content-between h5 mb-3 fw-bold">
+                    <span>Total:</span>
+                    <span class="text-warning" id="cartTotalSum">₦0</span>
+                </div>
+                <!-- Interactive Action Path -->
+                <a href="checkout.html" class="btn btn-warning w-100 fw-bold py-3 shadow" id="checkoutBtn">
+                    PROCEED TO CHECKOUT <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Cart Application Controller Engine -->
+    <script src="cart.js"></script>
+</body>
+</html>

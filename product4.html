@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extensions | Hidera Locs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body class="bg-black text-white">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning py-3">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-warning" href="Hairstyles.html">HIDERA LOCS</a>
+            <div class="ms-auto">
+                <button class="btn btn-outline-warning position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section class="py-5">
+        <div class="container py-4">
+            <div class="row g-5">
+                
+                <div class="col-md-6">
+                    <div class="mb-3">
+    <video id="mainProductDisplay" class="product-main-img w-100" autoplay loop muted playsinline controls style="border-radius: 12px; border: 1px solid #d4af37; box-shadow: 0 8px 24px rgba(0,0,0,0.5); max-height: 500px; object-fit: cover;">
+        <source src="img/extension.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+                    <div class="row g-2">
+                        <div class="col-3">
+                            <img src="https://img.kwcdn.com/product/fancy/56f99b95-2ef8-4a70-ac3d-a4ff82606c35.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img active" onclick="changeShowcaseImage(this)" alt="View 1">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://img.kwcdn.com/product/fancy/ee7994c7-fb49-4f75-9ee6-e0c350314cda.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 2">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://img.kwcdn.com/product/fancyalgo/toaster-api/toaster-processor-image-cm2in/6e71b13e-e77a-11ef-9a6d-0a580a66d8f5.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 3">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://img.kwcdn.com/product/fancy/0f89c220-43f8-4719-96a0-8d746574db78.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 4">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://img.kwcdn.com/product/fancy/e2396715-7570-4e1a-84ce-7ad66962993b.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 4">
+                        </div>
+                        <div class="col-3">
+                            <img src="https://img.kwcdn.com/product/fancy/be6c14fc-b58a-451b-8c8e-21d8f10ab91f.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 4">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 d-flex flex-column justify-content-center">
+                    <span class="text-warning text-uppercase tracking-wider small fw-bold mb-2">Organic Hair Care</span>
+                    <h1 class="fw-bold text-white display-5 mb-2">Locs Extensions</h1>
+                    
+                    <div class="d-flex align-items-center gap-3 my-3">
+                        <span class="h2 text-warning fw-bold mb-0">₦35,500</span>
+                        <span class="text-white-50 text-decoration-line-through small">₦37,000</span>
+                    </div>
+
+                    <p class="text-white-50 lead mb-4">
+                        Loc Extensions Human Hair 0.6cm Dreadlock Extensions Human Hair Loc Extensions Dreads Extensions for Men Women Real Human Hair Locs 1B Natural Black Handmade Permanent Locs
+                    </p>
+
+                    <div class="d-flex gap-3 align-items-center mt-2 mb-4">
+                        <div>
+                            <label class="form-label text-white-50 small d-block">Quantity</label>
+                            <input type="number" id="productQtyInput" class="form-control qty-input py-2" value="1" min="1">
+                        </div>
+                        <div class="flex-grow-1 pt-4">
+                            <button class="btn btn-warning fw-bold w-100 py-3 add-to-cart-btn" 
+                                    data-id="growth-oil-01"
+                                    data-name="Essential Growth Oil" 
+                                    data-price="7500">
+                                <i class="fas fa-shopping-bag me-2"></i>ADD TO CART
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="border-top border-secondary pt-4 row text-center g-2">
+                        <div class="col-4 small text-white-50"><i class="fas fa-leaf text-warning d-block mb-1 fs-5"></i> 100% Organic</div>
+                        <div class="col-4 small text-white-50"><i class="fas fa-ban text-warning d-block mb-1 fs-5"></i> Residue-Free</div>
+                        <div class="col-4 small text-white-50"><i class="fas fa-truck text-warning d-block mb-1 fs-5"></i> Fast Delivery</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div class="offcanvas offcanvas-end bg-dark text-white border-start border-warning" tabindex="-1" id="cartSidebar">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title text-warning fw-bold">
+                <i class="fas fa-shopping-bag me-2"></i>Your Shopping Bag
+            </h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="cartItemsContainer" class="flex-grow-1 overflow-y-auto mb-3">
+                <div class="text-center text-muted py-5">Your bag is empty</div>
+            </div>
+            
+            <div class="border-top border-secondary pt-3 mt-auto">
+                <div class="d-flex justify-content-between h5 mb-3 fw-bold">
+                    <span>Total:</span>
+                    <span class="text-warning" id="cartTotalSum">₦0</span>
+                </div>
+                <a href="checkout.html" class="btn btn-warning w-100 fw-bold py-3" id="checkoutBtn">
+                    PROCEED TO CHECKOUT <i class="fas fa-arrow-right ms-2"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+
+    <script>
+       <script>
+    const productVideo = document.getElementById('mainProductDisplay');
+
+    if (productVideo) {
+        // Pause the video when the customer hovers over it
+        productVideo.addEventListener('mouseenter', () => {
+            productVideo.pause();
+        });
+
+        // Resume playing when the mouse moves away
+        productVideo.addEventListener('mouseleave', () => {
+            productVideo.play();
+        });
+    }
+</script>
+</body>
+</html>

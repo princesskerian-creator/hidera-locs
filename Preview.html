@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidera Locs | Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Preview.html">HIDERA<span class="text-warning">LOCS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="Preview.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-warning" href="Login.html">Sign In</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="ReadFullTips" class="py-5 bg-black mt-5 border-top border-secondary">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="blogs.html" class="text-warning">Blog</a></li>
+                        <li class="breadcrumb-item active text-white-50">Night-time Care</li>
+                    </ol>
+                </nav>
+                
+                <h1 class="display-5 fw-bold text-warning mb-4">Top 5 Tips for Night-time Loc Care</h1>
+                <img src="https://images.unsplash.com/photo-1595475243692-3929478fd5f4?auto=format&fit=crop&q=80&w=800" class="img-fluid rounded-4 mb-4 border border-warning" alt="Night Care">
+                
+                <div class="blogs-content text-light lh-lg">
+                    <p class="lead text-white">Your night-time routine determines the health and longevity of your locs. Here are our top 5 professional tips:</p>
+                    
+                    <h4 class="text-warning mt-4">1. Use a Satin or Silk Bonnet</h4>
+                    <p>Cotton pillowcases absorb moisture from your locs and create friction. A satin scarf or bonnet keeps your natural oils where they belong—in your hair.</p>
+                    
+                    <h4 class="text-warning mt-4">2. Avoid Sleeping on Damp Locs</h4>
+                    <p>Going to bed with wet locs can lead to "loc rot" or a musty smell. Ensure your locs are 100% dry before laying down.</p>
+                    
+                    <h4 class="text-warning mt-4">3. Light Scalp Massage</h4>
+                    <p>Use a few drops of our <strong>Essential Growth Oil</strong> to massage your scalp for 2 minutes. This stimulates blood flow and promotes growth while you rest.</p>
+                    
+                    <h4 class="text-warning mt-4">4. Loose Styles Only</h4>
+                    <p>If you tie your locs up, keep the scrunchie loose. Tight styles at night put unnecessary tension on your edges and roots.</p>
+                    
+                    <h4 class="text-warning mt-4">5. Check for Lint</h4>
+                    <p>Lint is the enemy of clean locs! Keeping your hair covered at night is the #1 way to prevent lint from bedding from getting trapped in your hair fibers.</p>
+                </div>
+
+                <div class="mt-5 p-4 auth-card text-center">
+                    <h5 class="text-warning">Ready for a professional retwist?</h5>
+                    <a href="booking.html" class="btn btn-warning fw-bold mt-2">BOOK AN APPOINTMENT</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 text-center text-white bg-black my-5">
+    <div class="container py-5">
+        <h1 class="display-3 fw-bold text-warning">Nourish Your Crown</h1>
+        <p class="lead text-white-50">Premium loc installation, maintenance, and natural hair care products.</p>
+        <a href="shop.html" class="btn btn-warning fw-bold btn-lg mt-3">EXPLORE THE SHOP</a>
+    </div>
+</section>
+<div class="d-flex align-items-center gap-3 mt-5 p-3 border-top border-secondary">
+    <span class="text-white-50 small fw-bold text-uppercase">Share these tips:</span>
+    
+    <a id="share-whatsapp" href="#" target="_blank" class="btn btn-outline-success btn-sm rounded-pill px-3">
+        <i class="fab fa-whatsapp me-2"></i>WhatsApp
+    </a>
+
+    <button onclick="copyBlogLink()" class="btn btn-outline-light btn-sm rounded-pill px-3">
+        <i class="fas fa-link me-2"></i>Copy Link
+    </button>
+</div>
+
+<footer class="text-white py-4 border-top border-warning">
+    <div class="container text-center">
+        <p class="text-white-50 mb-0">&copy; 2026 Hidera Locs Professional. All Rights Reserved.</p>
+    </div>
+</footer>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // 1. WhatsApp Dynamic Link
+    const blogTitle = encodeURIComponent("Top 5 Tips for Night-time Loc Care");
+    const blogUrl = encodeURIComponent(window.location.href);
+    const whatsappBtn = document.getElementById('share-whatsapp');
+
+    // Create the message: "Check out this blog: Title - Link"
+    whatsappBtn.href = `https://wa.me/?text=${blogTitle}%20-%20Read%20more%20here:%20${blogUrl}`;
+
+    // 2. Copy to Clipboard Function
+    function copyBlogLink() {
+        navigator.clipboard.writeText(window.location.href);
+        
+        // Optional: Change button text temporarily to show success
+        const btn = event.currentTarget;
+        const originalHTML = btn.innerHTML;
+        btn.innerHTML = '<i class="fas fa-check me-2"></i>Copied!';
+        btn.classList.replace('btn-outline-light', 'btn-warning');
+        
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.classList.replace('btn-warning', 'btn-outline-light');
+        }, 2000);
+    }
+</script>
+</body>
+</html>

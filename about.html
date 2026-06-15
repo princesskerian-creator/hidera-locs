@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Hidera Locs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style_2.css">
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="Hairstyles.html">HIDERA<span class="text-warning">LOCS</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="Hairstyles.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogs.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item ms-lg-3"><a class="btn btn-outline-warning btn-sm" href="Login.html">Sign In</a></li>
+                    
+                    <!-- Dynamic Dropdown Component -->
+                    <li class="nav-item dropdown ms-lg-3">
+                        <a class="nav-link dropdown-toggle text-warning fw-bold d-flex align-items-center" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Hi, <span id="nav-user-name">Guest</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark border-warning">
+                            <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-th-large me-2"></i>My Dashboard</a></li>
+                            <li><a class="dropdown-item" href="payment-setting.html"><i class="fas fa-credit-card me-2"></i>Payment Methods</a></li>
+                            <li><hr class="dropdown-divider border-secondary"></li>
+                            <li><a class="dropdown-item text-danger" href="#" onclick="handleLogout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        <section class="journey-split-section py-5 position-relative overflow-hidden">
+    <div class="container position-relative z-index-2">
+        <div class="row align-items-center">
+            
+            <div class="col-lg-6 journey-content text-white mb-5 mb-lg-0">
+                <h1 class="display-3 fw-bold text-warning mb-4">Our Journey</h1>
+                <p class="lead text-light-gray">Founded in 2022, Hidera Locs was born from a passion for natural hair and the artistry of loc cultivation.</p>
+                <p class="text-light-gray">We bridge the gap between traditional techniques and modern luxury, ensuring every client leaves our chair feeling like royalty.</p>
+            </div>
+            
+            <div class="col-lg-6 d-flex justify-content-center align-items-center">
+                <div class="journey-circle-container">
+                    <img src="img/1000335916.jpg" 
+                         alt="Stylist at work" 
+                         class="journey-image">
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+        <section class="py-5 bg-dark">
+            <div class="container">
+                <div class="row g-4 text-center">
+                    <div class="col-md-4">
+                        <div class="p-4 border border-warning rounded shadow-sm h-100">
+                            <i class="fas fa-gem fa-3x text-warning mb-3"></i>
+                            <h3 class="h5">Premium Quality</h3>
+                            <p class="small text-muted">We use only the finest organic serums and tools for your locs.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 border border-warning rounded shadow-sm h-100">
+                            <i class="fas fa-heart fa-3x text-warning mb-3"></i>
+                            <h3 class="h5">Sustainable Care</h3>
+                            <p class="small text-muted">Ethically sourced products that respect both your hair and nature.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 border border-warning rounded shadow-sm h-100">
+                            <i class="fas fa-crown fa-3x text-warning mb-3"></i>
+                            <h3 class="h5">Expert Artistry</h3>
+                            <p class="small text-muted">Years of experience in starter locs, retwists, and repairs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-5 border-top border-warning mt-5">
+        <div class="container text-center">
+            <h3 class="fw-bold mb-4 text-uppercase">Hidera<span class="text-warning">Locs</span></h3>
+            <p class="text-white-50 mb-4">Follow our journey and see the latest transformations.</p>
+            <div class="d-flex justify-content-center gap-4 mb-4">
+                <a href="https://www.instagram.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.facebook.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.tiktok.com/@hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+            <hr class="border-light opacity-25 w-50 mx-auto my-4">
+            <p class="small text-white-50 mb-0">&copy; 2026 Hidera Locs Professional. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="cart.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>
