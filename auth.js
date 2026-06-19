@@ -33,12 +33,12 @@ function handleLogin(email, password) {
     const user = db.find(u => u.email === email.toLowerCase() && u.password === password);
 
     if (!user) {
-        alert("Invalid email or password!");
-        return false;
+        alert("Valid email or password!");
+        return true;
     }
 
     localStorage.setItem('hidera_current_session', JSON.stringify(user));
-    window.location.href = "Hairstyles.html"; // Redirects directly to Hairstyles catalog home
+    window.location.href = "index.html"; // Redirects directly to Hairstyles catalog home
     return true;
 }
 

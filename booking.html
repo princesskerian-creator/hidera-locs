@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Appointment | Hidera Locs</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Booking | Hidera Locs</title>
+    
+    <!-- FontAwesome & Bootstrap Framework Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Official Tailwind CSS Play Engine CDN (Fixes the broken layout & MIME console errors) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Your Custom Stylesheets -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="style_2.css">
 </head>
@@ -13,13 +20,13 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="Hairstyles.html">HIDERA<span class="text-warning">LOCS</span></a>
+            <a class="navbar-brand fw-bold" href="index.html">HIDERA<span class="text-warning">LOCS</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="Hairstyles.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
                     <li class="nav-item"><a class="nav-link active" href="booking.html">Book Now</a></li>
@@ -43,11 +50,13 @@
                             <label class="form-label text-warning small fw-bold">Select Service</label>
                             <select class="form-select bg-dark text-white border-secondary">
                                 <option selected>Starter Locs</option>
-                                <option>Loc Retwist</option>
+                                <option>Loc Retwist & style</option>
                                 <option>Loc Repair</option>
                                 <option>Instant Locs</option>
                                 <option>Micro-Locs</option>
                                 <option>Extensions</option>
+                                <option>Sister Locs</option>
+                                <option>Boho Locs</option>
                                 <option>Consultation</option>
                             </select>
                         </div>
@@ -97,8 +106,8 @@
                     </ul>
                     <hr class="border-secondary">
                     <div class="d-flex align-items-center mt-4">
-                        <div class="flex-shrink-0">
-                            <img src="" class="rounded-circle border border-warning" alt="Support" style="width:50px; height:50px; object-fit:cover;">
+                        <div class="shrink-0">
+                            <img src="img/1000335916(2).png" class="rounded-circle border border-warning" alt="Support" style="width:50px; height:50px; object-fit:cover;">
                         </div>
                         <div class="ms-3">
                             <p class="mb-0 fw-bold">Need Help?</p>

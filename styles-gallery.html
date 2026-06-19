@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Our Signature Styles | Hidera Locs</title>
+    
+    <!-- FontAwesome & Bootstrap Framework Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Official Tailwind CSS Play Engine CDN (Fixes the broken layout & MIME console errors) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Your Custom Stylesheets -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="style_2.css">
     
@@ -14,13 +21,13 @@
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="Hairstyles.html">HIDERA<span class="text-warning">LOCS</span></a>
+            <a class="navbar-brand fw-bold" href="index.html">HIDERA<span class="text-warning">LOCS</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id=\"navbarNav\">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="Hairstyles.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                     <li class="nav-item"><a class="nav-link active" href="styles-gallery.html">View Styles</a></li>
                     <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
@@ -220,7 +227,7 @@
                     </div>
                 </div>
             </div>
-
+            </div>
         </div>
     </main>
 
@@ -234,7 +241,7 @@
                 <div class="modal-body p-0">
                     <div class="row g-0">
                         <div class="col-md-6">
-                            <img src="" id="modalStyleImg" class="w-100 h-100 img-fluid" style="object-fit: cover; min-height: 400px; max-height: 500px;" alt="Selected Style Showcase">
+                            <img src="img/1000335916(2).png" id="modalStyleImg" class="w-100 h-100 img-fluid" style="object-fit: cover; min-height: 400px; max-height: 500px;" alt="Selected Style Showcase">
                         </div>
                         <div class="col-md-6 p-4 d-flex flex-column justify-content-center">
                             <h3 class="text-warning fw-bold mb-2" id="modalStyleHeader">Style Name</h3>

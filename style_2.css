@@ -1,10 +1,14 @@
+
+/* @import "tailwindcss"; */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-@import "tailwindcss";
+
 :root {
     --gold: #d4af37;
     --dark-gold: #b8860b;
     --black: #111111;
     --glass: rgba(255, 255, 255, 0.1);
+    /* ... rest of your custom css properties below remain exactly the same ... */
 }
 
 body {
@@ -218,7 +222,7 @@ footer {
     background-color: #111;
     border: 1px solid #333;
     color: #fff;
-    text-center: center;
+    text-align: center;
 }
 .qty-input:focus {
     background-color: #111;

@@ -14,12 +14,15 @@ function setupCartEventListeners() {
         const targetBtn = event.target.closest('.add-to-cart-btn');
         
         if (targetBtn) {
-            // Pull element meta attributes
+            // FIXED: Read the quantity input dynamically right when the button is clicked
+            const quantitySelected = parseInt(document.getElementById('productQtyInput')?.value) || 3;
+
+            // Pull element meta attributes along with the selected quantity
             const product = {
                 id: targetBtn.getAttribute('data-id'),
                 name: targetBtn.getAttribute('data-name'),
                 price: parseFloat(targetBtn.getAttribute('data-price')),
-                quantity: 1
+                quantity: quantitySelected // Safely maps to the selected element value!
             };
             
             addItemToBasket(product);
@@ -32,7 +35,8 @@ function addItemToBasket(item) {
     const existingIndex = basket.findIndex(entry => entry.id === item.id);
     
     if (existingIndex > -1) {
-        basket[existingIndex].quantity += 1;
+        // If it exists, add the newly selected quantity to the basket instead of just 1
+        basket[existingIndex].quantity += item.quantity;
     } else {
         basket.push(item);
     }
@@ -60,7 +64,7 @@ function removeBasketItem(itemId) {
     synchronizeCartState();
 }
 
-// Visual layout compilation template mapping layout engine engine
+// Visual layout compilation template mapping layout engine
 function renderCartContents() {
     const container = document.getElementById('cartItemsContainer');
     const totalLabel = document.getElementById('cartTotalSum');
@@ -105,13 +109,3 @@ function renderCartContents() {
         totalLabel.innerText = `₦${totalAccumulator.toLocaleString()}`;
     }
 }
-
-// Inside your cart.js event listener setup section:
-const quantitySelected = parseInt(document.getElementById('productQtyInput')?.value) || 1;
-
-const product = {
-    id: targetBtn.getAttribute('data-id'),
-    name: targetBtn.getAttribute('data-name'),
-    price: parseFloat(targetBtn.getAttribute('data-price')),
-    quantity: quantitySelected // Maps directly to selected element value input!
-};
