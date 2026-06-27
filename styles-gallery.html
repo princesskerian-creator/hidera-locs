@@ -19,27 +19,51 @@
 </head>
 <body class="bg-black text-white">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="index.html">HIDERA<span class="text-warning">LOCS</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id=\"navbarNav\">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="styles-gallery.html">View Styles</a></li>
-                    <li class="nav-item"><a class="nav-link" href="shop.html">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link" href="booking.html">Book Now</a></li>
-                </ul>
+    <!-- NAV BAR SECTION -->
+<nav class="bg-[#111111] border-b border-amber-500/30 sticky top-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center relative">
+        <a class="text-xl font-bold tracking-wider text-white" href="index.html">
+            HIDERA<span class="text-amber-500">LOCS</span>
+        </a>
+
+        <button id="mobileMenuBtn" class="md:hidden text-gray-300 hover:text-amber-500 focus:outline-none">
+            <i class="fas fa-bars text-xl" id="menuIcon"></i>
+        </button>
+
+        <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+            <a href="index.html" class="text-amber-500 font-medium text-sm transition-colors">Home</a>
+            <a href="about.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">About</a>
+            <a href="styles-gallery.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">View Style</a>
+            <a href="shop.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Shop</a>
+            <a href="contact.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Contact</a>
+            
+            <div class="relative inline-block text-left">
+                <div id="accountDropdown" class="hidden absolute right-0 mt-2 w-48 bg-black border border-neutral-800 rounded-xl py-1.5 shadow-2xl z-50">
+                    <div class="border-t border-neutral-900 my-1"></div>
+                    <button onclick="handleLogout()" class="w-full text-left block px-4 py-2 text-sm text-red-500 hover:bg-neutral-900 transition-colors">
+                        <i class="fas fa-sign-out-alt mr-2 text-xs"></i>Log Out
+                    </button>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <header class="py-5 text-center bg-dark border-bottom border-secondary mb-5">
-        <div class="container">
-            <span class="text-warning text-uppercase ls-2 small fw-bold">Craftsmanship Portfolio</span>
+        <div id="mobileMenuContainer" class="hidden absolute top-full left-0 w-full bg-[#111111] border-b border-amber-500/20 p-4 flex flex-col space-y-3 z-50 md:hidden">
+            <a href="index.html" class="text-amber-500 font-medium text-sm transition-colors py-1">Home</a>
+            <a href="about.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">About</a>
+            <a href="styles-gallery.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">View Style</a>
+            <a href="shop.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Shop</a>
+            <a href="booking.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Book Now</a>                
+            <button onclick="handleLogout()" class="w-full text-left block py-1 text-sm text-red-500"><i class="fas fa-sign-out-alt mr-2 text-xs"></i>Log Out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!-- MAKE SURE THIS IS PLACED RIGHT BEFORE YOUR CLOSING </body> TAG IN styles-gallery.html -->
+<header class="py-5 text-center bg-dark border-bottom border-secondary mb-5">
+    <div class="container">
+        <span class="text-warning text-uppercase ls-2 small fw-bold">Craftsmanship Portfolio</span>
             <h1 class="fw-bold text-white mt-2 display-4">Signature Loc Styles</h1>
             <p class="text-white-50 max-width-600 mx-auto">Explore our portfolio of transformations. Click on any style card to view high-resolution imagery and layout technical metrics.</p>
         </div>
@@ -47,20 +71,19 @@
 
     <main class="container mb-5">
         <div class="row g-4">
-            
             <div class="col-md-6 col-lg-4">
                 <div class="gallery-card h-100" data-bs-toggle="modal" data-bs-target="#viewStyleModal" 
-                     data-title="Boho Locs Boho Installation" 
+                     data-title="Stater Locs starter Installation" 
                      data-desc="Precision micro-interlocking parting layout built for optimal long-term volume and balance." 
                      data-price="₦120,000"
-                     data-img="img/7.jfif">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://thelocplace.co.uk/wp-content/uploads/2021/03/website-9-1.jpg" class="gallery-img" alt="Sisterlocks">
-                        <div class="gallery-overlay">
-                            <div>
-                                <h4 class="text-warning fw-bold mb-1">Boho Locs</h4>
+                     data-img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz20MkCrOWCCAmMu47OJ1l2MvET3tVh--jZjCFmp_NaA&s=10">
+                    <div id="starter-locs" class="gallery-img-wrapper">
+                            <img src="https://thelocplace.co.uk/wp-content/uploads/2021/03/website-9-1.jpg" class="gallery-img" alt="Start Locs">
+                            <div class="gallery-overlay">
+                                <div>
+                                <h4 class="text-warning fw-bold mb-1">Starter Locs</h4>
                                 <span class="badge bg-warning text-dark fw-bold">View Transformation</span>
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>
@@ -71,8 +94,8 @@
                      data-title="Boho Locs Boho Installation" 
                      data-desc="Precision micro-interlocking parting layout built for optimal long-term volume and balance." 
                      data-price="₦120,000"
-                     data-img=""><iframe width="1316" height="480" src="https://www.youtube.com/embed/vm_RGhriwkk" title="Faux Locs Quick Method!!! -UPDATE" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    <div class="gallery-img-wrapper">
+                     data-img="">
+                     <div class="gallery-img-wrapper">
                         <img src="https://thelocplace.co.uk/wp-content/uploads/2021/03/website-9-1.jpg" class="gallery-img" alt="Sisterlocks">
                         <div class="gallery-overlay">
                             <div>
@@ -83,25 +106,7 @@
                     </div>
                 </div>
             </div>
-
-             <div class="col-md-6 col-lg-4">
-                <div class="gallery-card h-100" data-bs-toggle="modal" data-bs-target="#viewStyleModal" 
-                     data-title="Boho Locs Boho Installation" 
-                     data-desc="Precision micro-interlocking parting layout built for optimal long-term volume and balance." 
-                     data-price="₦120,000"
-                     data-img="img/7.jfif">
-                    <div class="gallery-img-wrapper">
-                        <img src="https://thelocplace.co.uk/wp-content/uploads/2021/03/website-9-1.jpg" class="gallery-img" alt="Sisterlocks">
-                        <div class="gallery-overlay">
-                            <div>
-                                <h4 class="text-warning fw-bold mb-1">Boho Locs</h4>
-                                <span class="badge bg-warning text-dark fw-bold">View Transformation</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            
              <div class="col-md-6 col-lg-4">
                 <div class="gallery-card h-100" data-bs-toggle="modal" data-bs-target="#viewStyleModal" 
                      data-title="Boho Locs Boho Installation" 
@@ -121,16 +126,34 @@
             </div>
 
              <div class="col-md-6 col-lg-4">
-                <div class="gallery-card h-100" data-bs-toggle="modal" data-bs-target="#viewStyleModal" 
+                 <div class="gallery-card h-100" data-bs-toggle="modal" data-bs-target="#viewStyleModal" 
                      data-title="Boho Locs Boho Installation" 
                      data-desc="Precision micro-interlocking parting layout built for optimal long-term volume and balance." 
                      data-price="₦120,000"
                      data-img="img/7.jfif">
                     <div class="gallery-img-wrapper">
-                        <img src="https://thelocplace.co.uk/wp-content/uploads/2021/03/website-9-1.jpg" class="gallery-img" alt="Sisterlocks">
+                        <img src="https://www.pinterest.com/pin/859624647666279127/" class="gallery-img" alt="Sisterlocks">
                         <div class="gallery-overlay">
                             <div>
-                                <h4 class="text-warning fw-bold mb-1">Boho Locs</h4>
+                                <h4 class="text-warning fw-bold mb-1">Micro Locs</h4>
+                                <span class="badge bg-warning text-dark fw-bold">View Transformation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             <div class="col-md-6 col-lg-4">
+                 <div class="gallery-card h-100" data-bs-toggle="modal" data-bs-target="#viewStyleModal" 
+                     data-title="Micro Twist/ Microlocs / Root Loc’s " 
+                     data-desc="Precision micro-interlocking parting layout built for optimal long-term volume and balance." 
+                     data-price="₦120,000"
+                     data-img="https://i.pinimg.com/736x/1c/d8/f0/1cd8f09854d037fc54d0cb42dc222177.jpg">
+                    <div class="gallery-img-wrapper">
+                        <img src="https://i.pinimg.com/736x/8c/37/4e/8c374ee0002f51a7a5abcd3e0f47e1f2.jpg" class="gallery-img" alt="Micro Locs">
+                        <div class="gallery-overlay">
+                            <div>
+                                <h4 class="text-warning fw-bold mb-1">Micro Locs</h4>
                                 <span class="badge bg-warning text-dark fw-bold">View Transformation</span>
                             </div>
                         </div>
@@ -216,7 +239,7 @@
                      data-desc="Flawless protectively textured interlocking extensions providing maximum length instantly." 
                      data-price="₦45,000"
                      data-img="https://images.unsplash.com/photo-1595959183075-c1d0a1653de6?auto=format&fit=crop&q=80&w=600">
-                    <div class="gallery-img-wrapper">
+                     <div class="gallery-img-wrapper">
                         <img src="https://frohub.com/wp-content/uploads/2024/12/long-black-butterfly-locs-300x300.jpg" class="gallery-img" alt="Butterfly Locs">
                         <div class="gallery-overlay">
                             <div>
@@ -261,9 +284,34 @@
             </div>
         </div>
     </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+    
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+    const menuIcon = document.getElementById('menuIcon');
+
+    // Mobile Hamburger Dropdown
+    mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        mobileMenuContainer.classList.toggle('hidden');
+        if (mobileMenuContainer.classList.contains('hidden')) {
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+        } else {
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+        }
+    });
+
+    // Universal Outside Screen Click Closer
+    document.addEventListener('click', () => {
+        accountDropdown.classList.add('hidden');
+        arrowIcon.remove('rotate-180');
+        mobileMenuContainer.classList.add('hidden');
+        menuIcon.classList.replace('fa-times', 'fa-bars');
+    });
+</script>
+
     <script>
         const viewStyleModal = document.getElementById('viewStyleModal');
         if (viewStyleModal) {

@@ -18,23 +18,287 @@
 </head>
 <body>
 
-    <div class="container py-5">
-        <div class="auth-card p-4 shadow-lg border-warning">
-            <h2 class="h4 text-warning fw-bold mb-4">Linked Payment Profiles</h2>
-            <div class="card bg-dark border-secondary mb-3">
-                <div class="card-body d-flex align-items-center justify-content-between">
-                    <div class="d-flex align-items-center">
-                        <i class="fab fa-cc-visa fs-1 text-warning me-3"></i>
+<div class="container mx-auto px-4 py-6 md:py-12">
+    <div class="flex flex-col lg:flex-row gap-6 max-w-5xl mx-auto items-start">
+        
+        <div class="w-full lg:w-1/2 bg-neutral-900 border border-neutral-800 rounded-2xl p-4 md:p-6 shadow-xl">
+            <div class="mb-5">
+                <h2 class="text-lg md:text-xl font-bold tracking-wide text-amber-500">Linked Payment Profiles</h2>
+                <p class="text-neutral-400 text-xs md:text-sm mt-1">Select a method to manage or view authorization options</p>
+            </div>
+
+            <div class="space-y-3" id="paymentMethodsList">
+                
+                <div class="payment-item bg-black border border-amber-500 rounded-xl p-4 flex items-center justify-between cursor-pointer transition-all" data-method="card">
+                    <div class="flex items-center space-x-3">
+                        <div class="text-amber-500 text-2xl w-8 text-center"><i class="fab fa-cc-visa"></i></div>
                         <div>
-                            <h6 class="mb-0 fw-bold text-white">Visa ending in 4242</h6>
-                            <p class="small text-white-50 mb-0">Expires 12/28</p>
+                            <p class="text-xs md:text-sm font-semibold text-white flex items-center flex-wrap gap-1">
+                                Visa ending in 4242
+                                <span class="bg-amber-500/20 text-amber-500 text-[9px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full border border-amber-500/30" id="defaultBadge">Default</span>
+                            </p>
+                            <p class="text-[11px] text-neutral-500">Expires 12/28</p>
                         </div>
                     </div>
-                    <span class="badge bg-warning text-dark">Default</span>
+                    <div class="radio-indicator w-4 h-4 rounded-full border-2 border-amber-500 flex items-center justify-center flex-shrink-0">
+                        <div class="w-2 h-2 rounded-full bg-amber-500"></div>
+                    </div>
+                </div>
+
+                <div class="payment-item bg-black border border-neutral-800 rounded-xl p-4 flex items-center justify-between cursor-pointer transition-all" data-method="card">
+                    <div class="flex items-center space-x-3">
+                        <div class="text-neutral-400 text-2xl w-8 text-center"><i class="fab fa-cc-mastercard"></i></div>
+                        <div>
+                            <p class="text-xs md:text-sm font-semibold text-white">Mastercard ending in 8899</p>
+                            <p class="text-[11px] text-neutral-500">Expires 05/29</p>
+                        </div>
+                    </div>
+                    <div class="radio-indicator w-4 h-4 rounded-full border-2 border-neutral-700 flex items-center justify-center flex-shrink-0">
+                        <div class="w-2 h-2 rounded-full bg-transparent"></div>
+                    </div>
+                </div>
+                
+
+                <div class="payment-item bg-black border border-neutral-800 rounded-xl p-4 flex items-center justify-between cursor-pointer transition-all" data-method="bank">
+                    <div class="flex items-center space-x-3">
+                        <div class="text-neutral-400 text-2xl w-8 text-center"><i class="fas fa-university"></i></div>
+                        <div>
+                            <p class="text-xs md:text-sm font-semibold text-white">Direct Bank Transfer</p>
+                            <p class="text-[11px] text-neutral-500">Pay securely from your local banking portal</p>
+                        </div>
+                    </div>
+                    <div class="radio-indicator w-4 h-4 rounded-full border-2 border-neutral-700 flex items-center justify-center flex-shrink-0">
+                        <div class="w-2 h-2 rounded-full bg-transparent"></div>
+                    </div>
                 </div>
             </div>
-            <a href="shop.html" class="btn btn-outline-warning btn-sm mt-3">Return to Marketplace</a>
         </div>
+
+        <div class="w-full lg:w-1/2 bg-neutral-900 border border-neutral-800 rounded-2xl p-4 md:p-6 shadow-xl">
+            <h3 class="text-xs font-bold tracking-wider text-white uppercase mb-4 flex items-center gap-2">
+                <i class="fas fa-shield-alt text-amber-500"></i> Secure Authorization Details
+            </h3>
+
+            <form id="paymentSubmissionForm" class="space-y-4">
+                <input type="hidden" id="selectedPaymentType" value="card">
+
+                <div id="cardFields" class="space-y-3">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1.5">Cardholder Name</label>
+                        <input type="text" id="cardName" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="Princess Chinecherem" required>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1.5">Card Number</label>
+                        <input type="text" id="cardNumber" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="4000 1234 5678 9010" maxlength="19" required>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1.5">Expiration</label>
+                            <input type="text" id="cardExpiry" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="MM/YY" maxlength="5" required>
+                        </div>
+                        <div>
+                            <label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1.5">CVV / Code</label>
+                            <input type="password" id="cardCvv" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="•••" maxlength="3" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bankFields" class="space-y-3 hidden">
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1.5">Bank Name Location</label>
+                        <select id="bankName" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors">
+                            <option value="" disabled selected>Select Bank</option>
+                            <option value="access">Access Bank</option>
+                            <option value="gtbank">GTBank</option>
+                            <option value="zenith">Zenith Bank</option>
+                            <option value="uba">UBA</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold uppercase tracking-wider text-amber-500 mb-1.5">Account Number</label>
+                        <input type="text" id="accountNumber" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="0123456789" maxlength="10">
+                    </div>
+                </div>
+
+                <div class="pt-2 flex flex-col sm:flex-row gap-2">
+                    <button type="submit" class="w-full sm:flex-1 bg-amber-500 hover:bg-amber-600 text-black font-bold text-xs uppercase tracking-wider py-3.5 rounded-xl transition-all">
+                        Save Profile & Sync Database
+                    </button>
+                    <a href="shop.html" class="w-full sm:flex-1 border border-neutral-700 text-neutral-400 hover:text-white hover:border-neutral-500 text-xs font-bold uppercase tracking-wider py-3.5 rounded-xl transition-all text-center block">
+                        Cancel
+                    </a>
+                </div>
+                 <div class="flex flex-col sm:flex-row gap-3 mt-6 pt-2 border-t border-neutral-800">
+    <button class="flex-1 border border-dashed border-neutral-700 hover:border-amber-500 text-neutral-400 hover:text-amber-500 text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+        <i class="fas fa-plus text-xs"></i> Add Method
+    </button>
+            </form>
+        </div>
+
     </div>
+</div>
+
+<div class="container mx-auto px-4 py-6 md:py-12">
+    <div class="max-w-xl mx-auto bg-neutral-900 border border-neutral-800 rounded-2xl p-6 md:p-8 shadow-xl">
+        
+        <div class="mb-6 text-center">
+            <h2 class="text-xl font-bold tracking-wide text-amber-500">Secure Checkout & Verification</h2>
+            <p class="text-neutral-400 text-sm mt-1">Pay safely using your local Card or Bank Account</p>
+        </div>
+
+        <form id="paymentForm" class="space-y-4">
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-amber-500 mb-2">Email Address</label>
+                <input type="email" id="email-address" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="customer@email.com" required>
+            </div>
+
+            <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-amber-500 mb-2">Amount (NGN)</label>
+                <input type="number" id="amount" class="w-full bg-black border border-neutral-800 text-white rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-amber-500 transition-colors" placeholder="5000" required>
+            </div>
+
+            <div class="pt-4">
+                <button type="submit" class="w-full bg-amber-500 hover:bg-amber-600 text-black font-bold text-sm uppercase tracking-wider py-4 rounded-xl transition-all shadow-lg shadow-amber-500/10">
+                    <i class="fas fa-shield-alt mr-2"></i> Initialize Secure Payment
+                </button>
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://js.paystack.co/v1/inline.js"></script>
+
+<!-- DATA SWITCHER AND DATABASE INTEGRATION SCRIPT -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const paymentItems = document.querySelectorAll('.payment-item');
+        const badge = document.getElementById('defaultBadge');
+        
+        const cardFields = document.getElementById('cardFields');
+        const bankFields = document.getElementById('bankFields');
+        const selectedPaymentType = document.getElementById('selectedPaymentType');
+
+        const cardInputs = cardFields.querySelectorAll('input');
+        const bankInputs = bankFields.querySelectorAll('input, select');
+
+        // 1. Handle selection switching logic between card & bank layout views
+        paymentItems.forEach(item => {
+            item.addEventListener('click', () => {
+                paymentItems.forEach(el => {
+                    el.classList.replace('border-amber-500', 'border-neutral-800');
+                    const indicator = el.querySelector('.radio-indicator');
+                    indicator.classList.replace('border-amber-500', 'border-neutral-700');
+                    indicator.querySelector('div').classList.replace('bg-amber-500', 'bg-transparent');
+                });
+
+                item.classList.replace('border-neutral-800', 'border-amber-500');
+                const activeIndicator = item.querySelector('.radio-indicator');
+                activeIndicator.classList.replace('border-neutral-700', 'border-amber-500');
+                activeIndicator.querySelector('div').classList.replace('bg-transparent', 'bg-amber-500');
+
+                // Move default text label badge decoration to chosen row
+                const currentTitle = item.querySelector('p');
+                if (badge && currentTitle) { currentTitle.appendChild(badge); }
+
+                // Swap out display inputs fields conditionally based on target selection
+                const chosenMethod = item.getAttribute('data-method');
+                selectedPaymentType.value = chosenMethod;
+
+                if (chosenMethod === 'card') {
+                    cardFields.classList.remove('hidden');
+                    bankFields.classList.add('hidden');
+                    cardInputs.forEach(i => i.required = true);
+                    bankInputs.forEach(i => i.required = false);
+                } else if (chosenMethod === 'bank') {
+                    bankFields.classList.remove('hidden');
+                    cardFields.classList.add('hidden');
+                    cardInputs.forEach(i => i.required = false);
+                    bankInputs.forEach(i => i.required = true);
+                }
+            });
+        });
+
+        // 2. Handle Form submission and pass verified payload structure data to your database
+        const form = document.getElementById('paymentSubmissionForm');
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Structure data payload matching your backend expectations
+            const paymentPayload = {
+                type: selectedPaymentType.value,
+                timestamp: new Date().toISOString(),
+                details: selectedPaymentType.value === 'card' ? {
+                    name: document.getElementById('cardName').value,
+                    number: document.getElementById('cardNumber').value,
+                    expiry: document.getElementById('cardExpiry').value,
+                    cvv: document.getElementById('cardCvv').value
+                } : {
+                    bank: document.getElementById('bankName').value,
+                    account: document.getElementById('accountNumber').value
+                }
+            };
+
+            console.log("Submitting Authentication Data to DB:", paymentPayload);
+
+            // Placeholder structure for your standard database request hook (Firebase, Supabase, or custom API route)
+            /*
+            fetch('/api/save-payment-profile', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(paymentPayload)
+            })
+            .then(res => res.json())
+            .then(data => alert('Database successfully updated!'))
+            .catch(err => console.error(err));
+            */
+
+            alert('Authentication details submitted successfully!');
+        });
+    });
+</script>
+
+    
+<script>
+    const paymentForm = document.getElementById('paymentForm');
+    
+    paymentForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById("email-address").value;
+        const amountInput = document.getElementById("amount").value;
+        
+        // Paystack reads amounts in Kobo (Multiply Naira value by 100)
+        const finalizedAmount = amountInput * 100; 
+
+        let handler = PaystackPop.setup({
+            // Replace this test key with your live key from Paystack Dashboard settings panel
+            key: 'pk_test_your_public_key_goes_here', 
+            email: email,
+            amount: finalizedAmount,
+            currency: 'NGN',
+            
+            // This forces Paystack to show both local Card input fields and all Nigerian Bank apps/channels
+            channels: ['card', 'bank', 'ussd', 'qr', 'mobile_money'],
+
+            // Executed immediately upon successful authentication verification capture
+            callback: function(response) {
+                alert('Payment Successful! Reference ID: ' + response.reference);
+                console.log("Transaction Payload passed to your server database context: ", response);
+                
+                // Redirect user to your existing order completion portal page
+                window.location.href = "order-success.html?reference=" + response.reference;
+            },
+            
+            // Executed if user closes out the secure terminal wrapper iframe manually
+            onClose: function() {
+                alert('Transaction verification halted by user.');
+            }
+        });
+
+        handler.openIframe();
+    });
+</script>
 </body>
 </html>

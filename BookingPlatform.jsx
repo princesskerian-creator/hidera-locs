@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 
 // Mock Data for Services
 const SERVICES_DATA = [
-  { id: 1, name: 'Premium Hair Styling', category: 'Hair', price: '₦25,000', duration: '90 mins', image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=600&q=80' },
-  { id: 2, name: 'Luxury Dreadlocks Installation', category: 'Locs', price: '₦45,000', duration: '180 mins', image: 'https://images.unsplash.com/photo-1605497746445-97d1b0a9eaf4?auto=format&fit=crop&w=600&q=80' },
-  { id: 3, name: 'Deep Conditioning & Treatment', category: 'Hair', price: '₦15,000', duration: '45 mins', image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=600&q=80' },
-  { id: 4, name: 'Sisterlocks Retightening', category: 'Locs', price: '₦30,000', duration: '120 mins', image: 'https://images.unsplash.com/photo-1595853035070-59a39fe84de3?auto=format&fit=crop&w=600&q=80' },
-  { id: 5, name: 'Bridal Styling Package', category: 'Events', price: '₦80,000', duration: '150 mins', image: 'https://images.unsplash.com/photo-1492106087820-71f1a00d2b11?auto=format&fit=crop&w=600&q=80' },
+  { id: 1, name: 'Loc Retwist & style', category: 'Locs', price: '₦15,000', duration: '90 mins', image: 'https://media.istockphoto.com/id/2280517309/photo/confident-african-american-woman-with-red-tipped-locs-in-a-natural-outdoor-setting-of-huge.jpg?s=1024x1024&w=is&k=20&c=BwMLauxICPBx_v9NSK84cHDtMlaJfji7DY5DhP4nWuk=';}
+  { id: 1, name: 'Loc Repair', category: 'Locs', price: '₦25,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz20MkCrOWCCAmMu47OJ1l2MvET3tVh--jZjCFmp_NaA&s=10' },
+  { id: 1, name: 'Instant Locs', category: 'Locs', price: '₦150,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGdtcpnwq1cA2vGv8pt6gnR0QTRoX7vkf4K8n_rlP3Q&s=10' },
+  { id: 1, name: 'Micro-Locs', category: 'Locs', price: '₦200,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaMg7-g0moYV9lcxaF-yL_8LMXlwCqD3_5RAIB8OYnzw&s=10' },
+  { id: 1, name: 'Extensions', category: 'Locs', price: '₦500,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRNwgPqGoE6TEd6cJjPPjIFgIyK1cR2nL_6WO9kwG7QA&s=10' },
+  { id: 1, name: 'Sister Locs', category: 'Locs', price: '₦250,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZiGJxKVeVrh6A8xQEa7v7f9hEqEA0wBEd_WFiIEewJA&s' },
+  { id: 1, name: 'Boho Locs', category: 'Locs', price: '₦30,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXKfZyawyU996ECOv5BBFW7kXvu_EeLTdfrk91EbCixw&s=10' },
+  { id: 2, name: 'Luxury Dreadlocks Installation', category: 'Locs', price: '₦300,000', duration: '180 mins', image: 'https://images.unsplash.com/photo-1492681958267-2bf4c22a7e71?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRyZWFkbG9ja3xlbnwwfHwwfHx8MA%3D%3D'},
+  { id: 3, name: 'Deep Conditioning & Treatment', category: 'Locs', price: '₦15,000', duration: '45 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYVecj3K59X6hMfj1-NukuuHFkkRipRGgdwl5tdzpJrg&s=10' },
+  { id: 4, name: 'Sisterlocks Retightening', category: 'Locs', price: '₦30,000', duration: '120 mins', image: 'hhttps://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5TYj2Fa295NOeK3Vl3f2ZHa_gxzYgkZ3uDrdeI4_zkQ&s=10' },
+  { id: 5, name: 'Bridal Styling Package', category: 'Events', price: '₦80,000', duration: '150 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM5zjZcv18HyNI-QnVBDlDlFffXaX2U6xM9FJShbLMMw&s=10' },
 ];
 
 export default function BookingPlatform() {
@@ -43,12 +49,12 @@ export default function BookingPlatform() {
       <nav className="sticky top-0 z-50 bg-[#0d0d0d]/90 backdrop-blur-md border-b border-amber-500/20 px-6 py-4">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div className="text-2xl font-serif font-bold tracking-widest text-amber-500">
-            AURUM<span className="text-white font-sans font-light text-sm tracking-normal ml-1">STUDIO</span>
+            HIDERA LOCS<span className="text-white font-sans font-light text-sm tracking-normal ml-1">STUDIO</span>
           </div>
           
           {/* Desktop Nav Links */}
           <div className="hidden md:flex space-x-8 text-sm uppercase tracking-wider font-medium">
-            <a href="#hero" className="hover:text-amber-500 transition-colors">Home</a>
+            <a href="#index" className="hover:text-amber-500 transition-colors">Home</a>
             <a href="#services" className="hover:text-amber-500 transition-colors">Services</a>
             <a href="#book" className="hover:text-amber-500 transition-colors">Book Appointment</a>
           </div>
@@ -61,7 +67,7 @@ export default function BookingPlatform() {
           </div>
 
           {/* Mobile Hamburger Button */}
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-amber-500 focus:outline-none">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-amber-500 focus:outline-active">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />

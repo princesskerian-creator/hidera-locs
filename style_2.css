@@ -11,6 +11,10 @@
     /* ... rest of your custom css properties below remain exactly the same ... */
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--black);
@@ -116,7 +120,7 @@ footer {
   min-height: 60vh;
   display: flex;
   align-items: center;
-  background: linear-gradient(150deg, #000000 57%, #f59e0b 50%);
+  background: linear-gradient(150deg, #000000 57%, #ffc107 50%);
 }
 
 /* Text Enhancements */
@@ -132,8 +136,8 @@ footer {
   height: 360px;
   border-radius: 50%;
   overflow: hidden;
-  border: 6px solid #000000; /* Crisp black border to pop off the gold background */
-  box-shadow: 0 25px 30px -5px rgba(0, 0, 0, 0.4);
+  border: 6px solid #ffc107; /* Crisp black border to pop off the gold background */
+  box-shadow: 0 25px 30px -5px #ffd700;
   transition: transform 0.3s ease;
 }
 
