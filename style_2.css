@@ -116,7 +116,7 @@ footer {
 /* About page */
 
 /* Journey Section Layout and Triangle Split */
-.journey-split-section {
+.journey-triangle-section {
   min-height: 60vh;
   display: flex;
   align-items: center;

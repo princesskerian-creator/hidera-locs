@@ -125,25 +125,28 @@
     
     <script src="auth.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const currentSession = JSON.parse(localStorage.getItem('hidera_current_session'));
+    document.addEventListener('DOMContentLoaded', () => {
+        // Read the saved session values
+        const currentSession = JSON.parse(localStorage.getItem('hidera_current_session'));
 
-            if (!currentSession) {
-                alert("Please login to access your dashboard.");
-                window.location.href = "Login.html";
-                return;
-            }
-
-            document.getElementById('user-display-name').innerText = currentSession.name;
-            document.getElementById('user-location').innerText = currentSession.location;
-            document.getElementById('user-initial').innerText = currentSession.name.charAt(0).toUpperCase();
-        });
-
-        function cancelAppointment() {
-            if(confirm("Are you sure you want to cancel your appointment?")) {
-                alert("Appointment cancellation request sent to the stylist.");
-            }
+        // If no user is logged in, redirect them out immediately
+        if (!currentSession) {
+            alert("Please login to access your dashboard.");
+            window.location.href = "Login.html"; // Lowercase match to avoid file path errors
+            return;
         }
-    </script>
+
+        // Dynamically inject user data straight into the text layout nodes
+        document.getElementById('user-display-name').innerText = currentSession.name;
+        document.getElementById('user-location').innerText = currentSession.location;
+        document.getElementById('user-initial').innerText = currentSession.name.charAt(0).toUpperCase();
+    });
+
+    function cancelAppointment() {
+        if(confirm("Are you sure you want to cancel your appointment?")) {
+            alert("Appointment cancellation request sent to the stylist.");
+        }
+    }
+</script>
 </body>
 </html>

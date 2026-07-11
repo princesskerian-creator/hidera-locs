@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 // Mock Data for Services
 const SERVICES_DATA = [
-  { id: 1, name: 'Loc Retwist & style', category: 'Locs', price: '₦15,000', duration: '90 mins', image: 'https://media.istockphoto.com/id/2280517309/photo/confident-african-american-woman-with-red-tipped-locs-in-a-natural-outdoor-setting-of-huge.jpg?s=1024x1024&w=is&k=20&c=BwMLauxICPBx_v9NSK84cHDtMlaJfji7DY5DhP4nWuk=';}
+  { id: 1, name: 'Loc Retwist & style', category: 'Locs', price: '₦15,000', duration: '90 mins', image: 'https://media.istockphoto.com/id/2280517309/photo/confident-african-american-woman-with-red-tipped-locs-in-a-natural-outdoor-setting-of-huge.jpg?s=1024x1024&w=is&k=20&c=BwMLauxICPBx_v9NSK84cHDtMlaJfji7DY5DhP4nWuk='},
   { id: 1, name: 'Loc Repair', category: 'Locs', price: '₦25,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSz20MkCrOWCCAmMu47OJ1l2MvET3tVh--jZjCFmp_NaA&s=10' },
   { id: 1, name: 'Instant Locs', category: 'Locs', price: '₦150,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyGdtcpnwq1cA2vGv8pt6gnR0QTRoX7vkf4K8n_rlP3Q&s=10' },
   { id: 1, name: 'Micro-Locs', category: 'Locs', price: '₦200,000', duration: '90 mins', image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaMg7-g0moYV9lcxaF-yL_8LMXlwCqD3_5RAIB8OYnzw&s=10' },
@@ -27,7 +27,7 @@ export default function BookingPlatform() {
   const filteredServices = activeCategory === 'All' 
     ? SERVICES_DATA 
     : SERVICES_DATA.filter(service => service.category === activeCategory);
-
+};
   // Form Submission Handler
   const handleBookingSubmit = (e) => {
     e.preventDefault();
@@ -67,7 +67,8 @@ export default function BookingPlatform() {
           </div>
 
           {/* Mobile Hamburger Button */}
-          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-amber-500 focus:outline-active">
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="md:hidden text-amber-500 focus:outline-active
+          ">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
@@ -85,7 +86,7 @@ export default function BookingPlatform() {
             <a href="#services" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-500 py-2">Services</a>
             <a href="#book" onClick={() => setMobileMenuOpen(false)} className="hover:text-amber-500 py-2">Book Appointment</a>
           </div>
-        )}
+        )};
       </nav>
 
       {/* 2. HERO SECTION */}
@@ -129,10 +130,9 @@ export default function BookingPlatform() {
         {/* Dynamic Grid Grid Mapping */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredServices.map((service) => (
-            <div 
+            <div>
               key={service.id} 
-              className={`bg-[#141414] border transition-all rounded-sm overflow-hidden group flex flex-col justify-between ${selectedService.id === service.id ? 'border-amber-500 shadow-xl shadow-amber-500/5' : 'border-gray-800/80 hover:border-gray-700'}`}
-            >
+              className={`bg-[#141414] border transition-all rounded-sm overflow-hidden group flex flex-col justify-between ${selectedService.id === service.id ? 'border-amber-500 shadow-xl shadow-amber-500/5' : 'border-gray-800/80 hover:border-gray-700'}`};
               <div>
                 <div className="h-56 overflow-hidden relative">
                   <img src={service.image} alt={service.name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />

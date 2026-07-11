@@ -7,10 +7,9 @@
     
     <!-- FontAwesome & Bootstrap Framework Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Official Tailwind CSS Play Engine CDN (Fixes the broken layout & MIME console errors) -->
     
+    <!-- Official Tailwind CSS Play Engine CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Your Custom Stylesheets -->
@@ -18,29 +17,36 @@
     <link rel="stylesheet" href="style_2.css">
 </head>
 <body class="bg-black text-white">
+
 <nav class="bg-[#111111] border-b border-amber-500/30 sticky top-0 z-50 py-4">
+    <!-- The Magic CSS Hack: Hidden checkbox to track clicks without JS -->
+    <input type="checkbox" id="menu-toggle" class="hidden peer">
+
     <div class="container mx-auto px-4 flex justify-between items-center relative">
         <a class="text-xl font-bold tracking-wider text-white" href="index.html">
             HIDERA<span class="text-amber-500">LOCS</span>
         </a>
 
-        <button id="mobileMenuBtn" class="lg:hidden text-gray-300 hover:text-amber-500 focus:outline-none p-1">
-            <i class="fas fa-bars text-xl" id="menuIcon"></i>
-        </button>
+        <!-- Hamburger Button: Wrapped in a label connected to our checkbox -->
+        <label for="menu-toggle" class="lg:hidden text-gray-300 hover:text-amber-500 cursor-pointer p-1 select-none">
+            <i class="fas fa-bars text-xl"></i>
+        </label>
 
+        <!-- Desktop Navigation Items (Shows up when window is wide/maximized) -->
         <div class="hidden lg:flex items-center space-x-8">
-            <a href="index.html" class="text-amber-500 font-medium text-sm transition-colors">Home</a>
+            <a href="index.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Home</a>
             <a href="about.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">About</a>
-            <a href="blogs.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Blogs</a>
+            <a href="blogs.html" class="text-amber-500 font-medium text-sm transition-colors">Blogs</a>
             <a href="shop.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Shop</a>
             <a href="contact.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Contact</a>
             
-            <div class="dropdown d-inline-block ms-lg-3">
-                <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-                    <div class="avatar-circle border border-warning d-flex align-items-center justify-content-center bg-dark text-warning fw-bold" style="width:35px; height:35px; border-radius:50%;">P</div>
-                    <span class="ms-2 text-white d-none d-md-inline-block small">Princess</span>
+            <!-- Desktop Profile Menu Dropdown -->
+            <div class="dropdown ms-3">
+                <a href="#" class="flex items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                    <div class="avatar-circle border border-warning flex items-center justify-content-center bg-dark text-warning font-bold" style="width:35px; height:35px; border-radius:50%;">P</div>
+                    <span class="ms-2 text-white small">Princess</span>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark border-warning shadow-lg" aria-labelledby="userDropdown">
+                <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark border border-warning/30 shadow-lg" aria-labelledby="userDropdown">
                     <li><h6 class="dropdown-header text-warning">My Account</h6></li>
                     <li><a class="dropdown-item" href="dashboard.html"><i class="fas fa-calendar-check me-2"></i>Appointments</a></li>
                     <li><a class="dropdown-item" href="order-success.html"><i class="fas fa-shopping-bag me-2"></i>Order History</a></li>
@@ -51,10 +57,11 @@
             </div>
         </div>
 
-        <div id="mobileMenuContainer" class="hidden absolute top-full left-0 w-full bg-[#111111] border-b border-amber-500/20 p-4 flex flex-col space-y-3 z-50 lg:hidden">
-            <a href="index.html" class="text-amber-500 font-medium text-sm transition-colors py-1">Home</a>
+        <!-- Mobile Dropdown Menu (FIXED: Controlled using Tailwind's peer-checked utility) -->
+        <div class="hidden peer-checked:flex absolute top-full left-0 w-full bg-[#111111] border-b border-amber-500/20 p-4 flex-col space-y-3 z-50 lg:hidden">
+            <a href="index.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Home</a>
             <a href="about.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">About</a>
-            <a href="blogs.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Blogs</a>
+            <a href="blogs.html" class="text-amber-500 font-medium text-sm transition-colors py-1">Blogs</a>
             <a href="shop.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Shop</a>
             <a href="contact.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Contact</a>
             
@@ -68,144 +75,150 @@
         </div>
     </div>
 </nav>
-
-
 <section class="py-5 text-center bg-dark border-bottom border-warning">
-        <div class="container">
-            <h1 class="display-4 fw-bold text-warning">The Loc Journal</h1>
-            <p class="lead">Insights, care tips, and the latest in hairstyle artistry.</p>
+    <div class="container">
+        <h1 class="display-4 fw-bold text-warning">The Loc Journal</h1>
+        <p class="lead">Insights, care tips, and the latest in hairstyle artistry.</p>
+    </div>
+</section>
+
+<!-- Video Logs Grid -->
+<main class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+            <article class="auth-card h-100 overflow-hidden">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/l2kpmrbl-Go" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <div class="p-4">
+                    <span class="badge bg-warning text-dark mb-2">Maintenance</span>
+                    <h2 class="h5 fw-bold">Top 5 Tips for Night-time Loc Care</h2>
+                    <p class="small text-muted">Learn how to protect your style while you sleep to prevent frizz and breakage.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <article class="auth-card h-100 overflow-hidden">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/jccHAoJzwbs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <div class="p-4">
+                    <span class="badge bg-warning text-dark mb-2">SISTERLOCKS NIGHT TIME ROUTINE</span>
+                    <h2 class="h5 fw-bold">My Loc Journey</h2>
+                    <p class="small text-muted">How I Care For My Locs</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <article class="auth-card h-100 overflow-hidden">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/1oTbZxblRcc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <div class="p-4">
+                    <span class="badge bg-warning text-dark mb-2">MICROLOCS NIGHT ROUTINE</span>
+                    <h2 class="h5 fw-bold">Moisturize & Stretch Microlocs</h2>
+                    <p class="small text-muted">Learn how to protect your style while sleeping.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <article class="auth-card h-100 overflow-hidden">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/bSY8DXKrasM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <div class="p-4">
+                    <span class="badge bg-warning text-dark mb-2">HAIR INSTALLATION</span>
+                    <h2 class="h5 fw-bold">Install Coloured Temporary Dreads on Long Hair</h2>
+                    <p class="small text-muted">Learn how to attach extensions securely without changing your organic length.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+            <article class="auth-card h-100 overflow-hidden">
+                <iframe width="100%" height="215" src="https://www.youtube.com/embed/ERvYpwyd08E" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+                <div class="p-4">
+                    <span class="badge bg-warning text-dark mb-2">HAIR EXTENSION</span>
+                    <h2 class="h5 fw-bold">Temporary Dreadlocks Extension Tutorial on Short Hair</h2>
+                    <p class="small text-muted">Techniques on attaching extensions reliably to short base styles.</p>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <!-- Text Blogs -->
+    <div class="mt-5 pt-4">
+        <h2 class="text-warning fw-bold mb-4">Featured Articles</h2>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="auth-card p-4 border border-warning rounded">
+                    <h3 class="h5 text-white fw-bold">Top 5 Tips for Night-time Loc Care</h3>
+                    <p class="text-white-50 small">Discover deep structural methods to stop lint collection inside older loc cores...</p>
+                    <a href="Preview.html" class="btn btn-outline-warning btn-sm fw-bold">READ FULL TIPS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recommendations Grid Toggle -->
+    <section class="py-4 mt-5 border-top border-secondary">
+        <h4 class="text-warning mb-4">You Might Also Like</h4>
+        <div class="row">
+            <div class="col-md-4 mb-3">
+                <div class="auth-card p-3 border border-secondary rounded">
+                    <h6 class="text-white">5 Signs of Loc Rot</h6>
+                    <a href="preview.html" class="text-warning small text-decoration-none">Read More →</a>
+                </div>
+            </div>
         </div>
     </section>
+</main>
 
-    <!-- Video Logs -->
-    <main class="container py-5">
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <article class="auth-card h-100 overflow-hidden">
-                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/l2kpmrbl-Go" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    <div class="p-4">
-                        <span class="badge bg-warning text-dark mb-2">Maintenance</span>
-                        <h2 class="h5 fw-bold">Top 5 Tips for Night-time Loc Care</h2>
-                        <p class="small text-muted">Learn how to protect your style while you sleep to prevent frizz and breakage.</p>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <article class="auth-card h-100 overflow-hidden">
-                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/jccHAoJzwbs" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    <div class="p-4">
-                        <span class="badge bg-warning text-dark mb-2">SISTERLOCKS NIGHT TIME ROUTINE</span>
-                        <h2 class="h5 fw-bold">My Loc Journey</h2>
-                        <p class="small text-muted">How I Care For My Locs</p>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <article class="auth-card h-100 overflow-hidden">
-                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/1oTbZxblRcc" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    <div class="p-4">
-                        <span class="badge bg-warning text-dark mb-2">MICROLOCS NIGHT ROUTINE</span>
-                        <h2 class="h5 fw-bold">Moisturize & Stretch Microlocs</h2>
-                        <p class="small text-muted">Learn how to protect your style while sleeping.</p>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <article class="auth-card h-100 overflow-hidden">
-                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/bSY8DXKrasM" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    <div class="p-4">
-                        <span class="badge bg-warning text-dark mb-2">HAIR INSTALLATION</span>
-                        <h2 class="h5 fw-bold">Install Coloured Temporary Dreads on Long Hair</h2>
-                        <p class="small text-muted">Learn how to attach extensions securely without changing your organic length.</p>
-                    </div>
-                </article>
-            </div>
-
-            <div class="col-md-6 col-lg-4">
-                <article class="auth-card h-100 overflow-hidden">
-                    <iframe width="100%" height="215" src="https://www.youtube.com/embed/ERvYpwyd08E" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
-                    <div class="p-4">
-                        <span class="badge bg-warning text-dark mb-2">HAIR EXTENSION</span>
-                        <h2 class="h5 fw-bold">Temporary Dreadlocks Extension Tutorial on Short Hair</h2>
-                        <p class="small text-muted">Techniques on attaching extensions reliably to short base styles.</p>
-                    </div>
-                </article>
-            </div>
+<!-- Footer -->
+<footer class="bg-dark text-white py-5 border-top border-warning">
+    <div class="container text-center">
+        <h3 class="fw-bold mb-4 text-uppercase">Hidera<span class="text-warning">Locs</span></h3>
+        <p class="text-white-50 mb-4">Follow our journey and see the latest transformations.</p>
+        <div class="d-flex justify-content-center gap-4 mb-4">
+            <a href="https://www.instagram.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.facebook.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.tiktok.com/@hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
         </div>
+        <hr class="border-light opacity-25 w-50 mx-auto my-4">
+        <p class="small text-white-50 mb-0">&copy; 2026 Hidera Locs Professional. All Rights Reserved.</p>
+    </div>
+</footer>
 
-        <!-- Text Blogs -->
-        <div class="mt-5 pt-4">
-            <h2 class="text-warning fw-bold mb-4">Featured Articles</h2>
-            <div class="row">
-                <div class="col-md-6 mb-4">
-                    <div class="auth-card p-4 border border-warning rounded">
-                        <h3 class="h5 text-white fw-bold">Top 5 Tips for Night-time Loc Care</h3>
-                        <p class="text-white-50 small">Discover deep structural methods to stop lint collection inside older loc cores...</p>
-                        <a href="Preview.html" class="btn btn-outline-warning btn-sm fw-bold">READ FULL TIPS</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!-- FIXED: Moved Bootstrap script link up ABOVE your custom scripts so the menu runs smoothly -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="auth.js"></script>
+<script>
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenuContainer = document.getElementById('mobileMenuContainer');
+    const menuIcon = document.getElementById('menuIcon');
 
-        <!-- Recommendations Grid Toggle -->
-        <section class="py-4 mt-5 border-top border-secondary">
-            <h4 class="text-warning mb-4">You Might Also Like</h4>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="auth-card p-3 border border-secondary rounded">
-                        <h6 class="text-white">5 Signs of Loc Rot</h6>
-                        <a href="preview.html" class="text-warning small text-decoration-none">Read More →</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-5 border-top border-warning">
-        <div class="container text-center">
-            <h3 class="fw-bold mb-4 text-uppercase">Hidera<span class="text-warning">Locs</span></h3>
-            <p class="text-white-50 mb-4">Follow our journey and see the latest transformations.</p>
-            <div class="d-flex justify-content-center gap-4 mb-4">
-                <a href="https://www.instagram.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.facebook.com/hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.tiktok.com/@hideralocs" class="text-warning fs-2 social-link" target="_blank"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <hr class="border-light opacity-25 w-50 mx-auto my-4">
-            <p class="small text-white-50 mb-0">&copy; 2026 Hidera Locs Professional. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="auth.js"></script>
-        <script>
-            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-            const mobileMenuContainer = document.getElementById('mobileMenuContainer');
-            const menuIcon = document.getElementById('menuIcon');
-        
-            // Toggle Mobile Drawer View panel view
-            if (mobileMenuBtn) {
-                mobileMenuBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    mobileMenuContainer.classList.toggle('hidden');
-                    if (mobileMenuContainer.classList.contains('hidden')) {
-                        menuIcon.classList.replace('fa-times', 'fa-bars');
-                    } else {
-                        menuIcon.classList.replace('fa-bars', 'fa-times');
-                    }
-                });
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Stops browser from immediately closing the menu on click
+            mobileMenuContainer.classList.toggle('hidden');
+            
+            if (mobileMenuContainer.classList.contains('hidden')) {
+                menuIcon.className = 'fas fa-bars text-xl';
+            } else {
+                menuIcon.className = 'fas fa-times text-xl';
             }
-        
-            // Close mobile dropdown automatically if screen area is clicked
-            document.addEventListener('click', () => {
-                if (mobileMenuContainer) {
-                    mobileMenuContainer.classList.add('hidden');
-                    menuIcon.classList.replace('fa-times', 'fa-bars');
-                }
-            });
-        </script>
+        });
+    }
+
+    // Closes mobile dropdown drawer automatically if anything outside it is clicked
+    document.addEventListener('click', (e) => {
+        if (mobileMenuContainer && !mobileMenuContainer.contains(e.target)) {
+            mobileMenuContainer.classList.add('hidden');
+            if (menuIcon) menuIcon.className = 'fas fa-bars text-xl';
+        }
+    });
+
+    function handleLogout() {
+        if (confirm("Are you sure you want to sign out?")) {
+            localStorage.removeItem('hidera_current_session');
+            window.location.href = "Login.html";
+        }
+    }
+</script>
 </body>
 </html>
