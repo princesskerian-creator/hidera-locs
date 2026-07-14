@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Product details| Hidera LocsHome</title>
+    <title>Hidera Locs | Home</title>
     
     <!-- FontAwesome & Bootstrap Framework Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -13,137 +13,189 @@
     <!-- Official Tailwind CSS Play Engine CDN (Fixes the broken layout & MIME console errors) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Master Stylesheets -->
+    <!-- Your Custom Stylesheets -->
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="style_2.css">
 </head>
 <body class="bg-black text-white">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-black border-bottom border-warning py-3">
-        <div class="container">
-            <a class="navbar-brand fw-bold text-warning" href="index.html">HIDERA LOCS</a>
-            <div class="ms-auto">
-                <button class="btn btn-outline-warning position-relative" data-bs-toggle="offcanvas" data-bs-target="#cartSidebar">
-                    <i class="fas fa-shopping-bag"></i>
-                    <span id="cart-badge" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger d-none">0</span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <section class="py-5">
-        <div class="container py-4">
-            <div class="row g-5">
+    <!-- Main Product Container -->
+    <div class="container py-5 my-auto" style="min-height: 85vh; display: flex; align-items: center;">
+        <div class="card bg-dark border-secondary p-4 p-md-5 w-100 shadow-lg">
+            <div class="row align-items-center g-5">
                 
-                <div class="col-md-6">
-                    <div class="mb-3">
-    <video id="mainProductDisplay" class="product-main-img w-100" autoplay loop muted playsinline controls style="border-radius: 12px; border: 1px solid #d4af37; box-shadow: 0 8px 24px rgba(0,0,0,0.5); max-height: 500px; object-fit: cover;">
-        <source src="img/extension.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
-                    <div class="row g-2">
-                        <div class="col-3">
-                            <img src="https://img.kwcdn.com/product/fancy/56f99b95-2ef8-4a70-ac3d-a4ff82606c35.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img active" onclick="changeShowcaseImage(this)" alt="View 1">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://img.kwcdn.com/product/fancy/ee7994c7-fb49-4f75-9ee6-e0c350314cda.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 2">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://img.kwcdn.com/product/fancyalgo/toaster-api/toaster-processor-image-cm2in/6e71b13e-e77a-11ef-9a6d-0a580a66d8f5.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 3">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://img.kwcdn.com/product/fancy/0f89c220-43f8-4719-96a0-8d746574db78.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 4">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://img.kwcdn.com/product/fancy/e2396715-7570-4e1a-84ce-7ad66962993b.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 4">
-                        </div>
-                        <div class="col-3">
-                            <img src="https://img.kwcdn.com/product/fancy/be6c14fc-b58a-451b-8c8e-21d8f10ab91f.jpg?imageView2/2/w/800/q/70/format/avif" class="thumbnail-img" onclick="changeShowcaseImage(this)" alt="View 4">
-                        </div>
-                    </div>
+                <!-- Left Column: Product Image -->
+                <div class="col-md-6 text-center">
+                    <img src="https://ng.jumia.is/unsafe/fit-in/300x300/filters:fill(white)/product/51/9470104/1.jpg?5036" class="img-fluid rounded border border-warning shadow" alt="Essential Growth Oil" style="max-height: 400px; object-fit: cover;">
                 </div>
-
-                <div class="col-md-6 d-flex flex-column justify-content-center">
-                    <span class="text-warning text-uppercase tracking-wider small fw-bold mb-2">Organic Hair Care</span>
-                    <h1 class="fw-bold text-white display-5 mb-2">Locs Extensions</h1>
+                
+                <!-- Right Column: Product Description & Actions -->
+                <div class="col-md-6">
+                    <span class="badge bg-warning text-dark fw-bold mb-2">Bestseller</span>
+                    <h1 class="text-warning fw-bold display-5">pins</h1>
+                    <p class="h2 my-3 text-white">12,000</p>
+                    <p class="text-white-50 lead">3Pcs/Set(1Hook,2Hook,3Hook)</p>
                     
-                    <div class="d-flex align-items-center gap-3 my-3">
-                        <span class="h2 text-warning fw-bold mb-0">₦35,500</span>
-                        <span class="text-white-50 text-decoration-line-through small">₦37,000</span>
-                    </div>
-
-                    <p class="text-white-50 lead mb-4">
-                        Loc Extensions Human Hair 0.6cm Dreadlock Extensions Human Hair Loc Extensions Dreads Extensions for Men Women Real Human Hair Locs 1B Natural Black Handmade Permanent Locs
-                    </p>
-
-                    <div class="d-flex gap-3 align-items-center mt-2 mb-4">
-                        <div>
-                            <label class="form-label text-white-50 small d-block">Quantity</label>
-                            <input type="number" id="productQtyInput" class="form-control qty-input py-2" value="1" min="1">
-                        </div>
-                        <div class="flex-grow-1 pt-4">
-                            <button class="btn btn-warning fw-bold w-100 py-3 add-to-cart-btn" 
-                                    data-id="growth-oil-01"
-                                    data-name="Essential Growth Oil" 
-                                    data-price="7500">
-                                <i class="fas fa-shopping-bag me-2"></i>ADD TO CART
-                            </button>
-                        </div>
-                    </div>
-
-                    <div class="border-top border-secondary pt-4 row text-center g-2">
-                        <div class="col-4 small text-white-50"><i class="fas fa-leaf text-warning d-block mb-1 fs-5"></i> 100% Organic</div>
-                        <div class="col-4 small text-white-50"><i class="fas fa-ban text-warning d-block mb-1 fs-5"></i> Residue-Free</div>
-                        <div class="col-4 small text-white-50"><i class="fas fa-truck text-warning d-block mb-1 fs-5"></i> Fast Delivery</div>
+                    <!-- Action Triggers -->
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="shop.html" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-arrow-left me-2"></i>Back to Shop
+                        </a>
+                        
+                        <!-- Updated Dynamic Add to Cart Trigger -->
+                        <button class="btn btn-warning fw-bold px-5 py-2 add-to-cart-btn" 
+                                data-id="growth-oil-01"
+                                data-name="Essential Growth Oil" 
+                                data-price="7500">
+                            <i class="fas fa-shopping-bag me-2"></i>ADD TO CART
+                        </button>
                     </div>
                 </div>
 
             </div>
         </div>
-    </section>
+    </div>
 
-    <div class="offcanvas offcanvas-end bg-dark text-white border-start border-warning" tabindex="-1" id="cartSidebar">
+    <section class="py-5 bg-dark border-top border-secondary">
+    <div class="container">
+        <ul class="nav nav-tabs justify-content-center border-bottom border-secondary mb-4" id="productTab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active text-uppercase fw-bold px-4 py-3 text-warning border-0" 
+                        id="details-tab" data-bs-toggle="tab" data-bs-target="#details-panel" 
+                        type="button" role="tab" aria-controls="details-panel" aria-selected="true"
+                        style="background: transparent;">
+                    <i class="fas fa-info-circle me-2"></i>Product Details
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link text-uppercase fw-bold px-4 py-3 text-white-50 border-0" 
+                        id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs-panel" 
+                        type="button" role="tab" aria-controls="specs-panel" aria-selected="false"
+                        style="background: transparent;">
+                    <i class="fas fa-sliders-h me-2"></i>Specifications
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content row justify-content-center" id="productTabContent">
+            
+            <div class="tab-pane fade show active col-lg-9 text-white-50" id="details-panel" role="tabpanel" aria-labelledby="details-tab" tabindex="0">
+                <div class="p-4 bg-black rounded border border-secondary shadow-sm">
+                    <h4 class="text-warning fw-bold mb-3"> 8Pcs Dreadlock Crochet Hook Dirty Braid Crochet Needle Wooden 0.5mm. 0.75mm Crochet Needle Hooks For Making Dreadlock Braiding Hair Soft Bamboo Handle two single, Double and Triple Hook with 2 Curved Crochet
+                    </h4>
+                    <p class="mb-4">Durable material: the dreadlocks crochet and hair locking tool are made of stainless steel, the surface is smooth and polished, do not worry it will hurt your head skin, the crochet has bamboo handle, easy for you to hold in hand. Design dreadlocks: the hair locking tools and hair weaving needle crochet are helpers for you to weave and design your own hairstyles, they can help you to weave hair and avoid hand fatigue. Suitable for: the dreadlocks tools set can be applied to weave, tighten, fixed, repair your dreadlocks, if you like dreadlocks or want to try it, it is a nice tool set for you. Dreadlock Crochet Hook Dirty Braid Crochet Needle Wig Knitting Tool 0.5mm and 0.75mm
+                    </p>
+                    <h5 class="text-white fw-bold mb-2"></h5>
+                    <ul class="list-unstyled mb-4 text-white-50">
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Made of Bamboo: Handle of the knitted hairpin is made of bamboo, which is natural and harmless, not easy to oxidize and rust
+                       </li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Suitable for Braids:Knitting needles are very suitable for braids, weaving process, fixed dreadlocks, suitable for synthetic hair and real hair</li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i> Made of Bamboo:Handle of the knitted hairpin is made of bamboo, which is natural and harmless, not easy to oxidize and rust DIY Sewing Scissor Tool.</li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>How to Use: Operation is simple, first use the knitting crochet needle to knit your braid, then use the hair locking tool to fix your braid</li>
+                        <li class="mb-2"><i class="fas fa-check text-warning me-2"></i>Made of Strong Stainless Steel:Needle and hair locking tools are made of strong stainless steel, glossy and polished, and will not harm the skin of the head</li>
+                    </ul>
+                    <h5 class="text-white fw-bold mb-2"></h5>
+                    <p class="mb-0">
+                         
+                    </p>
+                </div>
+            </div>
+
+            <div class="tab-pane fade col-lg-9" id="specs-panel" role="tabpanel" aria-labelledby="specs-tab" tabindex="0">
+                <div class="p-4 bg-black rounded border border-secondary shadow-sm">
+                    <h4 class="text-warning fw-bold mb-3">Key Feactures</h4>
+                    
+                    <div class="table-responsive">
+                        <table class="table table-dark table-hover border border-secondary align-middle mb-0">
+                            <tbody>
+                                <tr>
+                                    <td class="text-warning fw-bold ps-2" style="width: 35%;height:20%;"></td>
+                                    <td class="text-white-50"><ul><li>Material: Natural bamboo
+                                </li><li>Super smooth feel than metal needles
+                                Perfect for fixing dreadlocks, Dirty Braids, Wigs, Knitting</li><li>There are six crochet hooks, 2pcs single needle, 2pcs double,2pcs Triple</li> <li>Custom designed for dreadlocks,dreadlock crochet hook.</li><li>Soft touch handle, made of bamboo, 0.5mm and 0.75mm diameter needle</li></ul></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="p-4 bg-black rounded border border-secondary shadow-sm">
+                        <h4 class="text-warning fw-bold mb-3">Specification</h4>
+                        
+                        <div class="table-responsive">
+                            <table class="table table-dark table-hover border border-secondary align-middle mb-0">
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">SKU: </td>
+                                        <td class="text-white-50"> GE779SK7H2SJMNAFAMZ</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Product Line:</td>
+                                        <td class="text-white-50"> I-INNOVATE</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Size (L x W x H cm): </td>
+                                        <td class="text-white-50"> 11*11*8cm</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Weight (kg):</td>
+                                        <td class="text-white-50"> 0.150</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Model:</td>
+                                        <td class="text-white-50">wooden Crochet Hooks</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Color: </td>
+                                        <td class="text-white-50">Wood</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Main Material:</td>
+                                        <td class="text-white-50">Wood</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-warning fw-bold ps-3">Country of Origin</td>
+                                        <td class="text-white-50">Nigeria</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Right Slide-Out Shopping Bag Drawer Layout (Bootstrap Offcanvas) -->
+    <div class="offcanvas offcanvas-end bg-dark text-white border-start border-warning" tabindex="-1" id="cartSidebar" aria-labelledby="cartSidebarLabel">
         <div class="offcanvas-header border-bottom border-secondary">
-            <h5 class="offcanvas-title text-warning fw-bold">
+            <h5 class="offcanvas-title text-warning fw-bold" id="cartSidebarLabel">
                 <i class="fas fa-shopping-bag me-2"></i>Your Shopping Bag
             </h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body d-flex flex-column">
+            <!-- Dynamic Selected Items Target Stack -->
             <div id="cartItemsContainer" class="flex-grow-1 overflow-y-auto mb-3">
+                <!-- JavaScript renders items here dynamically -->
                 <div class="text-center text-muted py-5">Your bag is empty</div>
             </div>
             
+            <!-- Summary calculations panel -->
             <div class="border-top border-secondary pt-3 mt-auto">
                 <div class="d-flex justify-content-between h5 mb-3 fw-bold">
                     <span>Total:</span>
                     <span class="text-warning" id="cartTotalSum">₦0</span>
                 </div>
-                <a href="checkout.html" class="btn btn-warning w-100 fw-bold py-3" id="checkoutBtn">
+                <!-- Interactive Action Path -->
+                <a href="checkout.html" class="btn btn-warning w-100 fw-bold py-3 shadow" id="checkoutBtn">
                     PROCEED TO CHECKOUT <i class="fas fa-arrow-right ms-2"></i>
                 </a>
             </div>
         </div>
     </div>
 
+    <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Cart Application Controller Engine -->
     <script src="cart.js"></script>
-
-    <script>
-    const productVideo = document.getElementById('mainProductDisplay');
-
-    if (productVideo) {
-        // Pause the video when the customer hovers over it
-        productVideo.addEventListener('mouseenter', () => {
-            productVideo.pause();
-        });
-
-        // Resume playing when the mouse moves away
-        productVideo.addEventListener('mouseleave', () => {
-            productVideo.play();
-        });
-    }
-</script>
 </body>
 </html>

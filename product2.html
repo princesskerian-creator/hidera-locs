@@ -18,6 +18,44 @@
     <link rel="stylesheet" href="style_2.css">
 </head>
 <body class="bg-black text-white">
+     <!-- Reusable Script-Free Navigation Menu -->
+    <nav class="bg-[#111111] border-b border-amber-500/30 sticky top-0 z-50 py-4">
+        <input type="checkbox" id="menu-toggle" class="hidden peer">
+        <div class="container mx-auto px-4 flex justify-between items-center relative">
+            <a class="text-xl font-bold tracking-wider text-white" href="index.html">
+                HIDERA<span class="text-amber-500">LOCS</span>
+            </a>
+            <label for="menu-toggle" class="lg:hidden text-gray-300 hover:text-amber-500 cursor-pointer p-1 select-none">
+                <i class="fas fa-bars text-xl"></i>
+            </label>
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="index.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Home</a>
+                <a href="about.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">About</a>
+                <a href="blogs.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Blogs</a>
+                <a href="shop.html" class="text-amber-500 font-medium text-sm transition-colors">Shop</a>
+                <a href="contact.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors">Contact</a>
+                
+                <div class="dropdown ms-3">
+                    <a href="#" class="flex items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="avatar-circle border border-warning flex items-center justify-content-center bg-dark text-warning font-bold" style="width:35px; height:35px; border-radius:50%;">P</div>
+                        <span class="ms-2 text-white small">Princess</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark border border-warning/30 shadow-lg">
+                        <li><hr class="dropdown-divider border-secondary"></li>
+                        <li><a class="dropdown-item text-danger" href="#" onclick="handleLogout()"><i class="fas fa-sign-out-alt me-2"></i>Sign Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="hidden peer-checked:flex absolute top-full left-0 w-full bg-[#111111] border-b border-amber-500/20 p-4 flex-col space-y-3 z-50 lg:hidden">
+            <a href="index.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Home</a>
+            <a href="about.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">About</a>
+            <a href="blogs.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Blogs</a>
+            <a href="shop.html" class="text-amber-500 font-medium text-sm transition-colors py-1">Shop</a>
+            <a href="contact.html" class="text-gray-300 hover:text-amber-500 font-medium text-sm transition-colors py-1">Contact</a>
+        </div>
+    </nav>
+
 
     <!-- Main Product Container -->
     <div class="container py-5 my-auto" style="min-height: 85vh; display: flex; align-items: center;">

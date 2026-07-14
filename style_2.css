@@ -235,6 +235,37 @@ footer {
     box-shadow: none;
 }
 
+/* product3 */
+/* Smooth fade transition styles for image navigation */
+#main-product-img {
+    transition: opacity 0.25s ease-in-out;
+}
+.thumb-wrap {
+    transition: all 0.2s ease-in-out;
+}
+
+/* product6 */
+/* Smooth fade transition styles for image navigation */
+#main-product-img {
+    transition: opacity 0.25s ease-in-out;
+}
+.thumb-wrap {
+    transition: all 0.2s ease-in-out;
+}
+/* Custom scrollbar styling for the 7 thumbnails list on desktop */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #111111;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #f59e0b;
+    border-radius: 2px;
+}
+
+
+
 /* style-gallery page */
  /* Interactive Style Grid Customizations */
 .gallery-card {
